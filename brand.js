@@ -1,15 +1,238 @@
 (() => {
-  const logo = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAEAAQADASIAAhEBAxEB/8QAGgABAQEBAQEBAAAAAAAAAAAAAAECAwQFB//EADIQAAIABgEDAQYGAwADAAAAAAABAgMRITFBBFFhcRIFEyIygZEjQlKhsdEUM0MkouH/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQIF/8QAHxEBAQADAAEFAQAAAAAAAAAAAAECESExEiIyQVFx/9oADAMBAAIRAxEAPwD85qS4K7mHUTQYxkMAgBQKDuAA2BgoEIzRnYFAAEZdEY6EUoToUUAlAKj+Ag0RlAVKZAAE8goAhGA74AgoNB2CIwO4VgO7ADwVDrQpHsAAMjQB4sUmyhUA2NkF2RCo2AFB1GgICogEDZdkeKhQAANjQGgJgMBgKAXFkBG0ZeC0qAiDIY7ASod8DdENAdy9SMWeCoVFsAYCjBPBV3AFdxcLFAIwsjOQsgKXAqKkBWBBhgANjQAE2AFRVgi7hVAZKgBYYqQBgIEwgGxUECBNlySnUAgMEYHodiLZfIdCgLE2MgWiRbGfJcdgLUlQ2QCiiCzcoE8AEoQVUp3IwmhsAK2AQEYqGRdsBV2GRizAMlLmngy7AXRA2H2Aj7gNgCVYDAQFbDwSyYEd/BC7Y2B6CeQ+wKKQrJ2AaKwNATsXoQtdaIDAtUANh3IXQEQ0MIzFNlw/NGl9QeGtEOf+TJf/AEh+5tRQxL4YkwksqkKyMKO5FYtbhsKgZBlXAtepE2ikAbI3QB4CLkgZAFybuUlQDtcmEVupAPSRjwCg7aBWlQUyBAUAAGQgYYAQA48nlQSFd1ieEicvkKRLr+Z4Q9m8aFQvm8teuKtJcDw3/wDAxbbdRZfGnT5Sncya5Ep/LBD88X9I3BBxpX+rjQt/qmfE2WZHHMmeuY24n1Ir+QsxjTigiV5El+IEjzxyIIn6pa9EVdM64YC2bcYI5kDo36ltPKPVHC4HSJXyeedSFe8WnRnt5rrOrS3ph/hAjzh3ZUPTsKZM4NqEjVAIkQDAB2IIiPIDYdA0CiMFZCBYmCkfkqO9SshaVAYCuGrXJgKqsGwKAKhgN3ICQboFk58mP0SIn2CW6jxwQvm85Qq6Tol3Z9LlNKNSoH8Etelf2eX2DD6YnNeYYYo/rhfydn8TdRUwnt3+sq5V0sSlGFWtA0PI6BhvCAjXqgihe1Q7z4qzFdOkMK/Y4FWchGw3oEZBU6CLqZoXBRGRsrMsKjBSNAKsBkKDxUVDsSgCoDoAjvkpEUBkkWQOoVSVKmMogLqNjZNgXB5fabpxvJ6Tze0VXjeAzn8a7+y0lxZzWfdpfuG6WWB7Oa/x5q6wJ/uTasGp4g2voE3YlaFwwHbZKUdAihDYRN0LWkIEgcyfNcnjpeqFVjjixCu5qLjylZ8ibHFtwpJGeE3DwnT5pkxuJ+MHRKoZk32uUcqOBeqVOiip+WJFkRRzvUnDeFVquh0HGXpnzVS0ct/cLrrBGMYAaRgBlAmMAAAyVABk1UMLAR6UGOpGApUE0aqFStgkHkpBA8gO4EMT4fXJih7G8IuwWbjz+y4/ihhi3C4GdXVOnQ8saikT7YiuvJ64ooY0o4cPK7hMfGma0tklbYCuhUC9C0sRv7squ0BUWhy5Mz3cqJ1vo9EyD0QSlty4W/sQeaU/czIpb+WJ1T7noxg5zYFHDTD0znBNcPwx4Wwk5x3LDE1h0qqGa1VUEFZaoRmmYeSg7hgFVKkY2GAIrXLUgQDVgKgejQdgGgpoCgwyC7+g2Sjd6hAUgb0KhTYAqEYmQQzF6X9zzwOKTFSO8L/c9Ww0mqNVRUsc4Wmqpqg6GXx03WXMcD7mvdcpfKpcfdRUInRI03DCqt0XcwpHNf5ZUK6uYjUPBlp+rl8j3tP+cuy+rCbv1HOTIj9oz8+jjwOscbwj28iZDMmfhqkMKUMNeiOHM50MuVDKSUMC+WXCc+PxeVyYffTpi43Hf5nl+FsEuuTtdnjRzmQJ3NuDiSv9cEya/wBUyN/wjnFFXsuiC/1yUcUqKj+Xp/R6IWmqp1RyjXqVGc5cblxOF42Dw9DZHgv8My2FHcldAhRU0TIACpHZAMACYQA9KsAgwogsgNWIDYC2NBQMbIBdYJi7GyXAryTY8jRQwgCVIgSOJQQuJ4RUebnN+49P6nQM5XU237L4q5M2Pl8m8qWvU116L6nq5PJi5EdY6JK0MKxCuhqH8D2bJght624n9LI8rdyEmppXm4TZIsVeSVphFGm6+DnNgrDXawdFelWR/NQFTjx+uBw7V14NuyOfs5f+W4HttfdHSKzaBOzaMIgKoAGBANkYC5NF0SoHpKTIoFUB2FSKPsSugOwFJUMmgKRF/gjrUBnBHUuyMAENil6ADz8yFuTX9Lqd6kiSihcLw0GcpuOkyP1cTj01DT9zit1M8eJqFyIndOsJp9HsJvZWoSsPqRtL7AG9lhV0Zp6slmxwyZcUUX0CXnV9lwuZ7QbWILv6I3G/ibN+zZb4/BmcmO0c/wCGBdts5PI+1x5jEYDJcqqTQGgJclygCMgAHrsRjZL1sFVhU2QLJFNleCIvQARlRAFcIIMJqgERbEshoqGPICGyCPsAAMRwKPs1hkicUK/EVV+pHRUoVRNXVgzpyUcD+WJMlVtpfU7NS4vnlQRfShHL4m+P/wC7B15450uDDrFpI9HH4TnNT/aNZUlXhlYij/pHWROhkL8CVLlvqob/AHOcyY44nFFE2+4T0/rfJnubHWiUKVIYVhI4NlZLBorQjGxkogK6EwwDJUEADY0APSFZgX2FUmi+CaALA0PIpYilRnwRbGgKQd6C4DuNEbqNFFJcPQef7CI8XLu5HoPIABAIVsSoABsngDwAJUsRKAA6AnUBUjZa0MgK2GwADIUWCPT2YIyphoQuTRa0IqPAqw7lYAg+gANkboXBKBAaBChXA2NgBkEVgArYVwNgIAlqABvAqRgAKggBshSMB5IUywDIUlAiipEGB6vIGQ2GhsB9A2wGFYlbjQwBW7dxoj7kRBqpNE2CiohdVI2DQEQIB4AwQIoRBUANdieCeQKCZFcgGGQNgGyBgBUlLFIVCgoAyBQjyKgD/9k=";
-  const icon = document.createElement("link");
-  icon.rel = "icon"; icon.type = "image/jpeg"; icon.href = logo;
-  document.head.appendChild(icon);
-  document.querySelectorAll(".brand .mark").forEach((mark) => {
-    const image = document.createElement("img");
-    image.className = "brand-logo";
-    image.src = logo;
-    image.alt = "The Code Society logo";
-    image.width = 44; image.height = 44;
-    image.style.cssText = "width:44px;height:44px;object-fit:cover;border-radius:3px;display:block;flex:0 0 auto";
-    mark.replaceWith(image);
-  });
+  const LOGO_PATH = '/assets/aistudio/TCS_LOGO_a1053890.jpg';
+
+  // Ensure favicon points to the official unmodified logo
+  const existingIcon = document.querySelector('link[rel="icon"]');
+  if (!existingIcon) {
+    const icon = document.createElement('link');
+    icon.rel = 'icon';
+    icon.type = 'image/jpeg';
+    icon.href = LOGO_PATH;
+    document.head.appendChild(icon);
+  }
+
+  // Mobile navigation drawer
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  if (navToggle && mobileDrawer) {
+    const setDrawerOpen = (open) => {
+      navToggle.setAttribute('aria-expanded', String(open));
+      mobileDrawer.classList.toggle('is-open', open);
+      mobileDrawer.setAttribute('aria-hidden', String(!open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      setDrawerOpen(!isOpen);
+    });
+
+    mobileDrawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setDrawerOpen(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && mobileDrawer.classList.contains('is-open')) {
+        setDrawerOpen(false);
+        navToggle.focus();
+      }
+    });
+  }
+
+  // Interactive Open-Source Focus Tracks on index.html
+  const trackTabs = document.querySelectorAll('[data-track-tab]');
+  const trackData = {
+    engineering: {
+      title: 'Engineering & Open Source',
+      meta: 'Repositories · Code Reviews · Shipping',
+      desc: 'Contribute directly to active community repositories, learn production Git workflows, triage real issues, and ship tested features alongside student maintainers.',
+      items: [
+        'Frontend & Web Architecture',
+        'Backend APIs & Automation Tooling',
+        'Pull Request Reviews & Testing',
+        'Documentation & Issue Triage'
+      ],
+      volunteerHref: 'volunteer.html?role=Software',
+      volunteerLabel: 'Volunteer in Software',
+      coreHref: 'careers.html?role=Software+Intern',
+      coreLabel: 'Apply as Software Intern'
+    },
+    design: {
+      title: 'Design & Creative Direction',
+      meta: 'Product UI/UX · Visual Systems · Brand',
+      desc: 'Shape the visual and interactive quality of community products. Conduct usability critiques, craft accessible interfaces, and build cohesive design systems.',
+      items: [
+        'UI/UX Systems & Wireframing',
+        'Editorial & Brand Typography',
+        'Accessibility & Usability Audits',
+        'Visual Assets & Campaign Craft'
+      ],
+      volunteerHref: 'volunteer.html?role=Creative+Department',
+      volunteerLabel: 'Volunteer in Creative',
+      coreHref: 'careers.html?role=UI%2FUX+Designer',
+      coreLabel: 'Apply as UI/UX Designer'
+    },
+    operations: {
+      title: 'Operations, Community & Growth',
+      meta: 'Program Delivery · Outreach · Recruiting',
+      desc: 'Keep initiatives moving smoothly from concept to launch. Coordinate contributors, manage project milestones, grow partnerships, and welcome new builders.',
+      items: [
+        'Project & Sprint Coordination',
+        'Contributor Onboarding & Recruiting',
+        'Community Outreach & Marketing',
+        'Operations & Program Planning'
+      ],
+      volunteerHref: 'volunteer.html?role=Project+Management',
+      volunteerLabel: 'Volunteer in Operations',
+      coreHref: 'careers.html?role=Recruiting+Intern',
+      coreLabel: 'Explore Core Operations'
+    }
+  };
+
+  if (trackTabs.length > 0) {
+    const titleEl = document.getElementById('track-title');
+    const metaEl = document.getElementById('track-meta');
+    const descEl = document.getElementById('track-desc');
+    const listEl = document.getElementById('track-list');
+    const volLink = document.getElementById('track-volunteer-link');
+    const coreLink = document.getElementById('track-core-link');
+
+    trackTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const key = tab.getAttribute('data-track-tab');
+        const info = trackData[key];
+        if (!info) return;
+
+        trackTabs.forEach((t) => {
+          const active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', String(active));
+        });
+
+        if (titleEl) titleEl.textContent = info.title;
+        if (metaEl) metaEl.textContent = info.meta;
+        if (descEl) descEl.textContent = info.desc;
+        if (listEl) {
+          listEl.replaceChildren(
+            ...info.items.map((text) => {
+              const li = document.createElement('li');
+              li.textContent = text;
+              return li;
+            })
+          );
+        }
+        if (volLink) {
+          volLink.setAttribute('href', info.volunteerHref);
+          volLink.firstChild.textContent = `${info.volunteerLabel} `;
+        }
+        if (coreLink) {
+          coreLink.setAttribute('href', info.coreHref);
+          coreLink.firstChild.textContent = `${info.coreLabel} `;
+        }
+      });
+    });
+  }
+
+  // Pre-select role dropdown from ?role= query param on form pages
+  const roleSelect = document.getElementById('role');
+  if (roleSelect) {
+    const params = new URLSearchParams(window.location.search);
+    const requestedRole = params.get('role');
+    if (requestedRole) {
+      const match = Array.from(roleSelect.options).find(
+        (opt) => opt.value.toLowerCase() === requestedRole.toLowerCase() || opt.text.toLowerCase() === requestedRole.toLowerCase()
+      );
+      if (match) {
+        roleSelect.value = match.value;
+      }
+    }
+  }
+
+  // Ensure FormSubmit _next points cleanly to this origin's thank-you.html
+  const nextInput = document.querySelector('form input[name="_next"]');
+  if (nextInput) {
+    try {
+      nextInput.value = new URL('thank-you.html', window.location.href).href;
+    } catch {
+      // Retain existing value if URL construction fails
+    }
+  }
+
+  // Accessible inline PDF validation & drag-and-drop feedback (replaces window.alert)
+  const resumeInput = document.getElementById('resume');
+  const dropzone = document.getElementById('resume-dropzone');
+  const feedbackEl = document.getElementById('resume-feedback');
+  const dropTitleEl = document.getElementById('resume-drop-title');
+
+  if (resumeInput && feedbackEl) {
+    const MAX_BYTES = 10 * 1024 * 1024;
+
+    const showFeedback = (type, message) => {
+      feedbackEl.className = `file-feedback ${type === 'valid' ? 'is-valid' : 'is-error'}`;
+      feedbackEl.textContent = message;
+    };
+
+    const validateFile = (file) => {
+      if (!file) {
+        feedbackEl.className = 'file-feedback';
+        feedbackEl.textContent = '';
+        if (dropTitleEl) dropTitleEl.textContent = 'Select or drop your PDF resume';
+        return;
+      }
+
+      const isPdf =
+        file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+      if (!isPdf) {
+        resumeInput.value = '';
+        if (dropTitleEl) dropTitleEl.textContent = 'Select or drop your PDF resume';
+        showFeedback('error', 'Unsupported file format. Please upload a PDF document (.pdf).');
+        return;
+      }
+
+      if (file.size > MAX_BYTES) {
+        resumeInput.value = '';
+        if (dropTitleEl) dropTitleEl.textContent = 'Select or drop your PDF resume';
+        showFeedback('error', 'File exceeds the 10 MB limit. Please upload a smaller PDF.');
+        return;
+      }
+
+      const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+      if (dropTitleEl) dropTitleEl.textContent = file.name;
+      showFeedback('valid', `Attached: ${file.name} (${sizeMb} MB)`);
+    };
+
+    resumeInput.addEventListener('change', () => {
+      validateFile(resumeInput.files && resumeInput.files[0]);
+    });
+
+    if (dropzone) {
+      ['dragenter', 'dragover'].forEach((evt) => {
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          dropzone.classList.add('is-dragover');
+        });
+      });
+      ['dragleave', 'drop'].forEach((evt) => {
+        dropzone.addEventListener(evt, () => {
+          dropzone.classList.remove('is-dragover');
+        });
+      });
+    }
+  }
+
+  // Accessible FAQ Accordion
+  const faqTriggers = document.querySelectorAll('.faq-trigger');
+  if (faqTriggers.length > 0) {
+    faqTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const expanded = trigger.getAttribute('aria-expanded') === 'true';
+        const panelId = trigger.getAttribute('aria-controls');
+        const panel = panelId ? document.getElementById(panelId) : null;
+        trigger.setAttribute('aria-expanded', String(!expanded));
+        if (panel) {
+          panel.hidden = expanded;
+        }
+      });
+    });
+  }
 })();

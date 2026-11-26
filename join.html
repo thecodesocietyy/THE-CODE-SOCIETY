@@ -1,21 +1,142 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#2b1016"><meta name="description" content="Join The Code Society as a volunteer or work with the core team.">
-<title>Join The Code Society</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#16090d;--panel:#281116;--cream:#f5e9e8;--muted:#b9a8aa;--line:#ffffff20;--accent:#a76a70}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:'Source Sans Pro',sans-serif}a{color:inherit;text-decoration:none}.nav{height:82px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:13px}.mark{font:42px 'Times New Roman';letter-spacing:-8px;padding-right:8px;color:var(--accent)}.brand-name{font-size:12px;font-weight:700;letter-spacing:.17em}.back{color:var(--muted);font-size:13px}.intro{text-align:center;padding:85px 24px 55px;background:radial-gradient(ellipse at 50% 0%,#4c192080,transparent 70%)}.eyebrow{color:#c18a8c;font-size:11px;letter-spacing:.25em;text-transform:uppercase}.intro h1{font:500 clamp(44px,7vw,76px) 'Times New Roman';margin:18px 0}.intro p{max-width:650px;margin:auto;color:var(--muted);font-size:14px;line-height:1.9}.choices{max-width:1050px;margin:0 auto 100px;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:22px}.card{display:flex;flex-direction:column;min-height:390px;padding:clamp(28px,4vw,48px);border:1px solid var(--line);background:linear-gradient(145deg,#1b1014,#0e0a0c);transition:.25s}.card:hover{border-color:#8b5058;transform:translateY(-4px)}.number{font:30px 'Times New Roman';color:var(--accent)}.card h2{font:36px 'Times New Roman';margin:28px 0 14px}.card p{color:var(--muted);font-size:14px;line-height:1.85;margin:0 0 18px}.card ul{padding-left:18px;color:#d9cacc;font-size:13px;line-height:2;margin:0 0 28px}.button{display:inline-flex;align-self:flex-start;margin-top:auto;padding:15px 22px;background:#66313a;border:1px solid #66313a;color:white;font-size:13px;transition:.2s}.button:hover{background:#80414a;transform:translateY(-2px)}.card.core{background:linear-gradient(145deg,#211116,#100b0d)}.footer{text-align:center;border-top:1px solid var(--line);padding:25px;color:#8e7d80;font-size:11px}@media(max-width:700px){.choices{grid-template-columns:1fr}.nav{padding:0 5vw}.intro{padding:65px 24px 40px}}
-</style><script defer src="brand.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16060a">
+  <meta name="description" content="Join The Code Society as a volunteer or work with the core team.">
+  <title>Join — The Code Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="brand.js"></script>
 </head>
 <body>
-<nav class="nav"><a class="brand" href="index.html"><span class="mark">CS</span><span class="brand-name">THE CODE SOCIETY</span></a><a class="back" href="index.html">← Back to home</a></nav>
-<header class="intro"><div class="eyebrow">Find your way in</div><h1>There’s a place for you here.</h1><p>Whether you want to volunteer, explore a new field, or take on a role with the core team, start where you are. You don’t need to fit one particular background to be part of the community.</p></header>
-<main class="choices">
-<section class="card"><span class="number">01</span><h2>Be a volunteer.</h2><p>Open to people from any background. You could be a high-school student looking to earn volunteer hours, a college student building experience, or simply someone with time, curiosity, and a desire to contribute.</p><ul><li>No specific academic background required</li><li>Explore a team and contribute at your pace</li><li>Receive a certificate on successful completion</li><li>Eligible volunteers can receive a founder’s letter of recommendation (LOR)</li></ul><a class="button" href="volunteer.html">Apply to volunteer ↗</a></section>
-<section class="card core"><span class="number">02</span><h2>Work with the core team.</h2><p>Want to take on a defined responsibility and help shape the work we do? Explore the open roles and apply to become part of the team.</p><ul><li>Take ownership of a functional role</li><li>Collaborate with the core leadership team</li><li>Help build and grow The Code Society</li></ul><a class="button" href="careers.html">Explore core team roles ↗</a></section>
-</main>
-<footer class="footer">© 2026 The Code Society · <a href="mailto:thecodingsocietyofficial@gmail.com">Contact us</a></footer>
-</body></html>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="brand-lockup" href="index.html">
+        <img class="brand-logo-thumb" src="/assets/aistudio/TCS_LOGO_a1053890.jpg" alt="The Code Society monogram" width="34" height="34" referrerpolicy="no-referrer">
+        <span class="brand-wordmark">The Code Society</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#what-we-do">What We Do</a>
+        <a class="nav-link" href="index.html#operating-model">Operating Model</a>
+        <a class="nav-link" href="index.html#faq">FAQ</a>
+        <a class="nav-link" href="careers.html">Careers</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="join.html" aria-current="page">Join Us</a>
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M3 6H17M3 10H17M3 14H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <a class="mobile-drawer-link" href="index.html#about">ABOUT <span>↗</span></a>
+    <a class="mobile-drawer-link" href="index.html#what-we-do">WHAT WE DO <span>↗</span></a>
+    <a class="mobile-drawer-link" href="index.html#operating-model">OPERATING MODEL <span>↗</span></a>
+    <a class="mobile-drawer-link" href="index.html#faq">FAQ <span>↗</span></a>
+    <a class="mobile-drawer-link" href="careers.html">CAREERS <span>↗</span></a>
+    <a class="btn btn-primary mobile-drawer-cta" href="join.html">Join Us <span class="text-action-arrow" aria-hidden="true">↗</span></a>
+  </div>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner page-hero-centered">
+          <a class="back-crumb" href="index.html">← Back to home</a>
+          <p class="eyebrow">FIND YOUR WAY IN</p>
+          <h1 class="display-title page-hero-title">THERE’S A PLACE FOR YOU HERE.</h1>
+          <p class="page-hero-lead">Whether you want to volunteer, explore a new discipline, or take on a role with the core team, start where you are. You don’t need to fit one particular background to contribute.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tone-2">
+      <div class="container">
+        <div class="join-grid">
+          <article class="join-card">
+            <div>
+              <div class="join-card-num">01 · Volunteer Track</div>
+              <h2>Be a volunteer.</h2>
+              <p class="join-card-desc">Open to people from any background. You could be a high-school student looking to earn volunteer hours, a college student building experience, or simply someone with time, curiosity, and a desire to contribute.</p>
+              <ul class="join-benefits">
+                <li>No specific academic background required</li>
+                <li>Explore a team and contribute at your pace</li>
+                <li>Receive a certificate on successful completion</li>
+                <li>Eligible volunteers can receive a founder’s letter of recommendation (LOR)</li>
+              </ul>
+            </div>
+            <div class="join-card-action">
+              <a class="btn btn-primary" href="volunteer.html">Apply to volunteer <span class="text-action-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="join-card join-card-featured">
+            <div>
+              <div class="join-card-num">02 · Core Team Track</div>
+              <h2>Work with the core team.</h2>
+              <p class="join-card-desc">Want to take on a defined responsibility and help shape the work we do? Explore the open functional roles and apply to become part of the leadership and execution team.</p>
+              <ul class="join-benefits">
+                <li>Take ownership of a defined functional role</li>
+                <li>Collaborate closely with the core leadership team</li>
+                <li>Help build, ship, and grow The Code Society</li>
+                <li>Direct mentorship and cross-team initiative leadership</li>
+              </ul>
+            </div>
+            <div class="join-card-action">
+              <a class="btn btn-monotone-elevated" href="careers.html">Explore core team roles <span class="text-action-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand-lockup" href="index.html">
+            <img class="brand-logo-thumb" src="/assets/aistudio/TCS_LOGO_a1053890.jpg" alt="The Code Society monogram" width="34" height="34" referrerpolicy="no-referrer">
+            <span class="brand-wordmark">The Code Society</span>
+          </a>
+          <p class="footer-summary">A student-led technology organization helping learners turn curiosity into real-world experience through open source and collaborative building.</p>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">NAVIGATION</h3>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="volunteer.html">Volunteer Application</a></li>
+            <li><a href="careers.html">Core Team Careers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">CONTACT</h3>
+          <ul class="footer-nav">
+            <li><a href="mailto:thecodingsocietyofficial@gmail.com">thecodingsocietyofficial@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 The Code Society</span>
+        <span>Open Source · Collaboration · Real Experience</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

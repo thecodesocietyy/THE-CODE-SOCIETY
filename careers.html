@@ -1,29 +1,234 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#2b1016"><meta name="description" content="Apply to join The Code Society."><title>Careers — The Code Society</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#16090d;--panel:#281116;--wine:#702638;--cream:#f5e9e8;--muted:#b9a8aa;--line:#ffffff20}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font-family:'Source Sans Pro',sans-serif}a{color:inherit;text-decoration:none}.nav{height:82px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:13px}.mark{font:42px 'Times New Roman';letter-spacing:-8px;padding-right:8px;color:#a76a70}.brand-name{font-size:12px;font-weight:700;letter-spacing:.17em}.back{color:var(--muted);font-size:13px}.back:hover{color:white}.intro{padding:65px 24px 42px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#4c192080,transparent 70%)}.eyebrow{color:#c18a8c;font-size:11px;letter-spacing:.25em;text-transform:uppercase}.intro h1{font:500 clamp(42px,6vw,68px) 'Times New Roman';margin:17px 0}.intro p{max-width:600px;margin:auto;color:var(--muted);line-height:1.8;font-size:14px}.form-wrap{max-width:850px;margin:0 auto 90px;padding:0 24px}.form-card{border:1px solid var(--line);background:linear-gradient(145deg,#171013,#0e0a0c);padding:clamp(24px,5vw,54px)}.form-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;padding-bottom:25px;border-bottom:1px solid var(--line);margin-bottom:30px}.form-heading h2{font:27px 'Times New Roman';margin:0}.required-note{font-size:11px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.field{display:flex;flex-direction:column;gap:9px;margin-bottom:22px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#e8d7d9;letter-spacing:.02em}.field label b{color:#c18a8c}.field input,.field select,.field textarea{width:100%;background:#0b0809;border:1px solid #ffffff27;color:var(--cream);padding:15px 14px;font:13px 'Source Sans Pro';border-radius:0;outline:none;transition:border .2s}.field input:focus,.field select:focus,.field textarea:focus{border-color:#a76a70}.field input::placeholder,.field textarea::placeholder{color:#786b6e}.field select{color:#d8c9cb}.field select option{background:#281116}.field textarea{min-height:125px;resize:vertical;line-height:1.6}.hint{font-size:11px;color:#8e7d80;margin-top:-3px}.file{padding:13px!important;border:1px dashed #ffffff40!important}.submit-row{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:20px}.submit{border:0;background:#66313a;color:white;padding:16px 27px;font:600 13px 'Source Sans Pro';cursor:pointer;transition:.2s}.submit:hover{background:#80414a;transform:translateY(-2px)}.privacy{font-size:11px;color:#8e7d80;line-height:1.6;max-width:330px}.footer{text-align:center;border-top:1px solid var(--line);padding:25px;color:#8e7d80;font-size:11px}@media(max-width:620px){.grid{grid-template-columns:1fr;gap:0}.field.full{grid-column:auto}.form-heading{align-items:flex-start;flex-direction:column}.submit-row{align-items:flex-start;flex-direction:column}.submit{width:100%}.nav{padding:0 5vw}}
-</style><script defer src="brand.js"></script>
-</head><body>
-<nav class="nav"><a class="brand" href="index.html"><span class="mark">CS</span><span class="brand-name">THE CODE SOCIETY</span></a><a class="back" href="index.html">← Back to home</a></nav>
-<header class="intro"><div class="eyebrow">Careers &amp; community</div><h1>Find your place here.</h1><p>We’re looking for curious people who want to learn, contribute, and build with a team. Tell us a little about yourself and the role you’re interested in.</p></header>
-<main class="form-wrap"><form class="form-card" action="https://formsubmit.co/thecodingsocietyofficial@gmail.com" method="POST" enctype="multipart/form-data">
-<input type="hidden" name="_subject" value="New application — The Code Society"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://thecodingsociety.github.io/THE-CODING-SOCIETY/careers.html"><input type="text" name="_honey" style="display:none">
-<div class="form-heading"><h2>Application form</h2><span class="required-note"><b>*</b> Required fields</span></div>
-<div class="grid">
-<div class="field"><label for="first">First name <b>*</b></label><input id="first" name="First name" autocomplete="given-name" placeholder="Your first name" required></div>
-<div class="field"><label for="last">Last name <b>*</b></label><input id="last" name="Last name" autocomplete="family-name" placeholder="Your last name" required></div>
-<div class="field"><label for="email">Email address <b>*</b></label><input id="email" type="email" name="Applicant email" autocomplete="email" placeholder="you@example.com" required></div>
-<div class="field"><label for="major">Major / branch of study <b>*</b></label><input id="major" name="Major / branch" placeholder="e.g. CSE, ECE, Design" required></div>
-<div class="field"><label for="year">Graduation year <b>*</b></label><select id="year" name="Graduation year" required><option value="" disabled selected>Select a year</option><option>2024</option><option>2025</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>Already graduated</option></select></div>
-<div class="field"><label for="role">Role you’re applying for <b>*</b></label><select id="role" name="Role" required><option value="" disabled selected>Choose a role</option><option>Software Intern</option><option>UI/UX Designer</option><option>Graphic Designer</option><option>Social Media Marketing</option><option>Recruiting Intern</option><option>Not listed here — I’m interested</option></select></div>
-<div class="field full"><label for="resume">Resume (PDF) <b>*</b></label><input class="file" id="resume" type="file" name="attachment" accept="application/pdf,.pdf" required><span class="hint">PDF only. Maximum file size: 10 MB.</span></div>
-<div class="field"><label for="portfolio">Portfolio link <span class="hint">(optional)</span></label><input id="portfolio" type="url" name="Portfolio link" placeholder="https://"></div>
-<div class="field"><label for="github">GitHub profile <b>*</b></label><input id="github" type="url" name="GitHub link" placeholder="https://github.com/username" required></div>
-<div class="field full"><label for="linkedin">LinkedIn profile <b>*</b></label><input id="linkedin" type="url" name="LinkedIn link" placeholder="https://linkedin.com/in/username" required></div>
-<div class="field full"><label for="achievements">What are some of your achievements? <b>*</b></label><textarea id="achievements" name="Achievements" placeholder="Share projects, contributions, awards, experiences, or anything you're proud of..." required></textarea></div>
-<div class="field full"><label for="why">Why do you want this role? <b>*</b></label><textarea id="why" name="Why this role" placeholder="Tell us what interests you about this role and what you would bring to the team..." required></textarea></div>
-<div class="field full"><label for="anything-else">Anything else you want us to know? <span class="hint">(optional)</span></label><textarea id="anything-else" name="Anything else you want us to know" placeholder="Anything else you’d like to share with our team..."></textarea></div>
-</div><div class="submit-row"><button class="submit" type="submit">Submit application ↗</button><p class="privacy">Your application and attached resume will be sent to The Code Society recruitment inbox.</p></div>
-</form></main><footer class="footer">© 2026 The Code Society · <a href="mailto:thecodingsocietyofficial@gmail.com">Contact us</a></footer>
-<script>document.getElementById('resume').addEventListener('change',function(){const f=this.files[0];if(f&&(f.type!=='application/pdf'||f.size>10*1024*1024)){alert('Please upload a PDF file smaller than 10 MB.');this.value='';}});</script>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16060a">
+  <meta name="description" content="Apply to join The Code Society core team.">
+  <title>Careers — The Code Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="brand.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="brand-lockup" href="index.html">
+        <img class="brand-logo-thumb" src="/assets/aistudio/TCS_LOGO_a1053890.jpg" alt="The Code Society monogram" width="34" height="34" referrerpolicy="no-referrer">
+        <span class="brand-wordmark">The Code Society</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#what-we-do">What We Do</a>
+        <a class="nav-link" href="index.html#operating-model">Operating Model</a>
+        <a class="nav-link" href="index.html#faq">FAQ</a>
+        <a class="nav-link" href="careers.html" aria-current="page">Careers</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="join.html">Join Us</a>
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M3 6H17M3 10H17M3 14H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <a class="mobile-drawer-link" href="index.html#about">ABOUT <span>↗</span></a>
+    <a class="mobile-drawer-link" href="index.html#what-we-do">WHAT WE DO <span>↗</span></a>
+    <a class="mobile-drawer-link" href="index.html#operating-model">OPERATING MODEL <span>↗</span></a>
+    <a class="mobile-drawer-link" href="index.html#faq">FAQ <span>↗</span></a>
+    <a class="mobile-drawer-link" href="careers.html">CAREERS <span>↗</span></a>
+    <a class="btn btn-primary mobile-drawer-cta" href="join.html">Join Us <span class="text-action-arrow" aria-hidden="true">↗</span></a>
+  </div>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <a class="back-crumb" href="index.html">← Back to home</a>
+          <p class="eyebrow">CAREERS &amp; CORE LEADERSHIP</p>
+          <h1 class="display-title page-hero-title">FIND YOUR PLACE HERE.</h1>
+          <p class="page-hero-lead">We’re looking for curious builders who want to learn, take ownership, and ship alongside a focused team. Tell us a little about yourself and the role you’re interested in.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="container form-layout">
+        <aside class="form-sidebar">
+          <div class="form-sidebar-card">
+            <h2>Core team expectations</h2>
+            <p>Core contributors partner closely with society leadership to ship open-source initiatives and mentor incoming members.</p>
+            <ul class="form-checklist">
+              <li>
+                <strong>Open roles</strong>
+                Software Intern, UI/UX Designer, Graphic Designer, Social Media Marketing, Recruiting Intern, or open interest
+              </li>
+              <li>
+                <strong>What we value</strong>
+                Curiosity, clear communication, reliable follow-through, and shipped work over credentials
+              </li>
+              <li>
+                <strong>Prefer a flexible pace?</strong>
+                <a href="volunteer.html">Explore our volunteer application →</a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <form class="form-card" action="https://formsubmit.co/thecodingsocietyofficial@gmail.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="New application — The Code Society">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="thank-you.html">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-card-header">
+            <h2>Application form</h2>
+            <span class="required-legend"><span class="required-star">*</span> Required fields</span>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="first">First name <span class="required-star">*</span></label>
+              <input id="first" name="First name" autocomplete="given-name" placeholder="Your first name" required>
+            </div>
+
+            <div class="field">
+              <label for="last">Last name <span class="required-star">*</span></label>
+              <input id="last" name="Last name" autocomplete="family-name" placeholder="Your last name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address <span class="required-star">*</span></label>
+              <input id="email" type="email" name="Applicant email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="field">
+              <label for="major">Major / branch of study <span class="required-star">*</span></label>
+              <input id="major" name="Major / branch" placeholder="e.g. CSE, ECE, Design" required>
+            </div>
+
+            <div class="field">
+              <label for="year">Graduation year <span class="required-star">*</span></label>
+              <select id="year" name="Graduation year" required>
+                <option value="" disabled selected>Select a year</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+                <option>2029</option>
+                <option>2030</option>
+                <option>2031</option>
+                <option>Already graduated</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="role">Role you’re applying for <span class="required-star">*</span></label>
+              <select id="role" name="Role" required>
+                <option value="" disabled selected>Choose a role</option>
+                <option>Software Intern</option>
+                <option>UI/UX Designer</option>
+                <option>Graphic Designer</option>
+                <option>Social Media Marketing</option>
+                <option>Recruiting Intern</option>
+                <option>Not listed here — I’m interested</option>
+              </select>
+            </div>
+
+            <div class="field field-full">
+              <label for="resume">Resume (PDF) <span class="required-star">*</span></label>
+              <div id="resume-dropzone" class="file-dropzone">
+                <input id="resume" type="file" name="attachment" accept="application/pdf,.pdf" required>
+                <p id="resume-drop-title" class="file-dropzone-title">Select or drop your PDF resume</p>
+                <p class="file-dropzone-sub">PDF format only · Maximum file size: 10 MB</p>
+              </div>
+              <div id="resume-feedback" class="file-feedback" role="status" aria-live="polite"></div>
+            </div>
+
+            <div class="field">
+              <label for="portfolio">Portfolio link <span class="field-optional">(optional)</span></label>
+              <input id="portfolio" type="url" name="Portfolio link" placeholder="https://">
+            </div>
+
+            <div class="field">
+              <label for="github">GitHub profile <span class="required-star">*</span></label>
+              <input id="github" type="url" name="GitHub link" placeholder="https://github.com/username" required>
+            </div>
+
+            <div class="field field-full">
+              <label for="linkedin">LinkedIn profile <span class="required-star">*</span></label>
+              <input id="linkedin" type="url" name="LinkedIn link" placeholder="https://linkedin.com/in/username" required>
+            </div>
+
+            <div class="field field-full">
+              <label for="achievements">What are some of your achievements? <span class="required-star">*</span></label>
+              <textarea id="achievements" name="Achievements" placeholder="Share projects, contributions, awards, experiences, or anything you're proud of..." required></textarea>
+            </div>
+
+            <div class="field field-full">
+              <label for="why">Why do you want this role? <span class="required-star">*</span></label>
+              <textarea id="why" name="Why this role" placeholder="Tell us what interests you about this role and what you would bring to the team..." required></textarea>
+            </div>
+
+            <div class="field field-full">
+              <label for="anything-else">Anything else you want us to know? <span class="field-optional">(optional)</span></label>
+              <textarea id="anything-else" name="Anything else you want us to know" placeholder="Anything else you’d like to share with our team..."></textarea>
+            </div>
+          </div>
+
+          <div class="form-submit-row">
+            <button class="btn btn-monotone-elevated" type="submit">Submit application <span class="text-action-arrow" aria-hidden="true">↗</span></button>
+            <p class="form-privacy">Your application and attached resume will be sent directly to The Code Society recruitment inbox.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand-lockup" href="index.html">
+            <img class="brand-logo-thumb" src="/assets/aistudio/TCS_LOGO_a1053890.jpg" alt="The Code Society monogram" width="34" height="34" referrerpolicy="no-referrer">
+            <span class="brand-wordmark">The Code Society</span>
+          </a>
+          <p class="footer-summary">A student-led technology organization helping learners turn curiosity into real-world experience through open source and collaborative building.</p>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Navigation</h3>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="join.html">Join the Society</a></li>
+            <li><a href="volunteer.html">Volunteer Application</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-nav">
+            <li><a href="mailto:thecodingsocietyofficial@gmail.com">thecodingsocietyofficial@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 The Code Society</span>
+        <span>Open Source · Collaboration · Real Experience</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,81 +1,533 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1A1919">
-<meta name="description" content="The Code Society — a student-led community turning curiosity into real-world experience through open source, collaboration, and building.">
-<title>The Code Society — Make Experience Happen</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#1A1919;--wine:#6E1E3B;--bone:#E8DFD0;--bone-dim:#b9afa2;--line:rgba(232,223,208,.17);--serif:Georgia,'Times New Roman',serif;--sans:'Manrope','DM Sans',sans-serif;--mono:'DM Mono',monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--ink);color:var(--bone);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}::selection{background:var(--wine);color:var(--bone)}
-.site-nav{height:84px;padding:0 6.5vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:5;background:rgba(26,25,25,.92);backdrop-filter:blur(14px)}
-.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:35px;height:35px;border:1px solid rgba(232,223,208,.55);border-radius:50%;display:grid;place-items:center;font:italic 18px var(--serif);color:var(--bone)}.brand-name{font-size:11px;font-weight:800;letter-spacing:.19em}.nav-links{display:flex;align-items:center;gap:34px;font-size:12px;color:var(--bone-dim)}.nav-links a{transition:color .2s}.nav-links a:hover{color:var(--bone)}.nav-cta{padding:12px 17px;border:1px solid rgba(232,223,208,.45);color:var(--bone)}.nav-cta:hover{background:var(--bone);color:var(--ink)!important}
-.hero{min-height:690px;min-height:calc(100svh - 84px);padding:100px 9vw 90px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);align-items:center;gap:5vw;position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 48%,rgba(110,30,59,.52),transparent 47%),linear-gradient(115deg,#1A1919 44%,#24151b 100%)}
-.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(232,223,208,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(232,223,208,.035) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,transparent,black 70%);pointer-events:none}
-.hero-copy{position:relative;z-index:1;max-width:800px;animation:rise .8s both}.kicker,.section-kicker{font:11px var(--mono);letter-spacing:.17em;text-transform:uppercase;color:#c88da0}.kicker{display:flex;align-items:center;gap:12px;margin-bottom:34px}.kicker:before{content:"";width:31px;height:1px;background:#c88da0}
-h1{font-size:clamp(58px,8.1vw,116px);line-height:.98;letter-spacing:-.075em;font-weight:600;margin:0 0 30px;max-width:850px}h1 span{font-family:var(--serif);font-weight:400;font-style:italic;color:#c17a91;letter-spacing:-.065em}.hero-copy>p{font-size:15px;line-height:1.9;color:var(--bone-dim);max-width:535px;margin:0 0 38px}.hero-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;gap:22px;padding:16px 20px;background:var(--wine);border:1px solid var(--wine);font-size:12px;font-weight:700;transition:transform .25s,background .25s,border .25s}.button:hover{transform:translateY(-3px);background:#84294d;border-color:#84294d}.button.secondary{background:transparent;border-color:rgba(232,223,208,.35)}.button.secondary:hover{background:rgba(232,223,208,.08);border-color:var(--bone)}.arrow{font-size:17px;line-height:10px}
-.hero-art{height:min(460px,55vw);min-height:300px;position:relative;display:grid;place-items:center;z-index:1;animation:appear 1.2s .15s both}.orbit{position:absolute;border:1px solid rgba(232,223,208,.18);border-radius:50%;aspect-ratio:1}.orbit.one{width:95%;animation:rotate 32s linear infinite}.orbit.two{width:70%;border-style:dashed;animation:rotate 44s linear infinite reverse}.orbit.three{width:46%;border-color:rgba(193,122,145,.55)}.orbit:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--bone);top:13%;left:20%;box-shadow:0 0 22px rgba(232,223,208,.6)}.orbit.two:after{background:#c17a91;top:75%;left:4%;width:10px;height:10px}.core-symbol{width:33%;aspect-ratio:1;background:linear-gradient(145deg,#8c3152,#4a172b);border-radius:50%;display:grid;place-items:center;box-shadow:0 0 100px rgba(110,30,59,.45),inset 0 0 40px rgba(232,223,208,.12);font:clamp(40px,6vw,78px) var(--serif);font-style:italic;color:var(--bone);transform:rotate(-12deg)}.art-caption{position:absolute;bottom:0;right:2%;font:10px var(--mono);letter-spacing:.12em;color:#a89b91;text-transform:uppercase}
-.scroll-note{position:absolute;bottom:30px;left:9vw;font:10px var(--mono);letter-spacing:.14em;color:#9e9289;text-transform:uppercase;display:flex;align-items:center;gap:12px}.scroll-note:before{content:"";height:1px;width:35px;background:#9e9289}
-.ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#211b1c;padding:17px 0}.ticker-track{display:flex;width:max-content;animation:marquee 34s linear infinite;gap:34px;font:10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#bcae9f}.ticker-track span{display:flex;align-items:center;gap:34px}.ticker-track b{color:#b66b84;font-size:14px}
-.section{padding:120px 9vw}.section-top{display:flex;justify-content:space-between;align-items:flex-start;gap:35px}.section-kicker{margin-bottom:23px}.section h2{font-size:clamp(38px,5.4vw,70px);line-height:1.08;letter-spacing:-.065em;font-weight:600;max-width:780px;margin:0}.section h2 em{font-family:var(--serif);font-weight:400;color:#bd7890}.section-intro{max-width:350px;color:var(--bone-dim);font-size:13px;line-height:1.9;margin:44px 0 0}.manifesto{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:start}.manifesto-aside{font:11px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#b88a98;padding-top:10px}.manifesto-copy h2{font-size:clamp(35px,4.6vw,61px);line-height:1.15;letter-spacing:-.06em;font-weight:500;margin:0 0 28px}.manifesto-copy h2 em{font-family:var(--serif);font-weight:400;color:#bd7890}.manifesto-copy p{max-width:650px;color:var(--bone-dim);font-size:14px;line-height:2;margin:0}
-.pillars{background:var(--bone);color:var(--ink);padding:110px 9vw}.pillars .section-kicker{color:var(--wine)}.pillars h2 em{color:var(--wine)}.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:58px;border-top:1px solid rgba(26,25,25,.22);border-bottom:1px solid rgba(26,25,25,.22)}.pillar{padding:30px 28px 34px 0;min-height:250px;position:relative}.pillar+.pillar{border-left:1px solid rgba(26,25,25,.22);padding-left:28px}.pillar-no{font:11px var(--mono);color:var(--wine)}.pillar h3{font:clamp(24px,2.4vw,33px) var(--serif);font-weight:400;margin:45px 0 14px}.pillar p{font-size:12px;line-height:1.9;color:#625b53;max-width:270px;margin:0}.pillar-mark{position:absolute;right:22px;top:25px;font:25px var(--serif);color:rgba(110,30,59,.5)}
-.pathways{padding:115px 9vw}.pathway-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:52px}.pathway{min-height:310px;padding:34px;border:1px solid var(--line);background:linear-gradient(145deg,#272021,#1d1919);display:flex;flex-direction:column;transition:border .25s,transform .25s}.pathway:hover{border-color:#98516a;transform:translateY(-4px)}.pathway-tag{font:10px var(--mono);letter-spacing:.14em;color:#c88da0;text-transform:uppercase}.pathway h3{font:clamp(28px,3vw,40px) var(--serif);font-weight:400;margin:42px 0 12px}.pathway p{font-size:12px;line-height:1.9;color:var(--bone-dim);max-width:410px;margin:0 0 28px}.pathway-link{margin-top:auto;font-size:12px;color:var(--bone);display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:18px}.pathway-link span{font-size:18px;color:#c17a91}
-.closing{padding:92px 9vw;background:var(--wine);display:flex;justify-content:space-between;align-items:center;gap:35px;position:relative;overflow:hidden}.closing:after{content:"TCS";position:absolute;right:2vw;bottom:-.48em;font:clamp(140px,23vw,330px)/1 var(--serif);color:rgba(232,223,208,.07);pointer-events:none}.closing-copy{position:relative;z-index:1}.closing .section-kicker{color:#e0b7c3}.closing h2{font-size:clamp(36px,5vw,62px);line-height:1.08;letter-spacing:-.06em;margin:14px 0 12px;max-width:650px}.closing p{color:#e0c6cb;font-size:13px;line-height:1.8;margin:0}.closing .button{background:var(--bone);color:var(--ink);border-color:var(--bone);position:relative;z-index:1;white-space:nowrap}.closing .button:hover{background:white}
-footer{padding:27px 6.5vw;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#a99d92;font-size:10px}footer a:hover{color:var(--bone)}.footer-brand{font-weight:800;letter-spacing:.14em;color:var(--bone)}
-@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes appear{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}@keyframes rotate{to{transform:rotate(360deg)}}@keyframes marquee{to{transform:translateX(-50%)}}
-@media(max-width:850px){.hero{grid-template-columns:1fr .65fr;padding-left:7vw;padding-right:7vw}.hero-art{min-height:260px}.section,.pillars,.pathways{padding:85px 7vw}.manifesto{gap:4vw}.section-top{display:block}.section-intro{margin-top:25px}.closing{padding:75px 7vw}.scroll-note{left:7vw}}
-@media(max-width:650px){.site-nav{height:72px;padding:0 5vw}.nav-links{gap:15px}.nav-links a:first-child,.nav-links a:nth-child(2){display:none}.brand-name{font-size:9px}.brand-mark{width:31px;height:31px}.hero{min-height:auto;display:block;padding:92px 7vw 100px}.hero h1{font-size:clamp(57px,15vw,88px)}.hero-art{height:290px;min-height:0;max-width:360px;margin:40px auto 0}.scroll-note{bottom:22px}.manifesto{grid-template-columns:1fr;gap:28px}.manifesto-copy h2{font-size:clamp(37px,10vw,54px)}.pillar-grid{grid-template-columns:1fr;margin-top:38px}.pillar{min-height:0;padding:26px 0 30px}.pillar+.pillar{border-left:0;border-top:1px solid rgba(26,25,25,.22);padding-left:0}.pillar h3{margin:27px 0 10px}.pillar-mark{top:24px}.pathway-grid{grid-template-columns:1fr}.pathway{min-height:280px}.closing{display:block}.closing .button{margin-top:28px}footer{padding:24px 5vw;flex-wrap:wrap}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-</style>
-<script defer src="brand.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16060a">
+  <meta name="description" content="THE CODE SOCIETY — a student-driven technology community bridging academic knowledge and real-world experience through open source.">
+  <meta property="og:title" content="THE CODE SOCIETY">
+  <meta property="og:description" content="A student-driven technology community connecting talent with opportunity, projects with contributors, and students with real-world software development.">
+  <title>THE CODE SOCIETY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="brand.js"></script>
 </head>
 <body>
-<nav class="site-nav" aria-label="Main navigation">
-  <a class="brand" href="index.html"><span class="brand-mark">C.</span><span class="brand-name">THE CODE SOCIETY</span></a>
-  <div class="nav-links"><a href="#mission">Our mission</a><a href="#approach">What we do</a><a href="careers.html">Careers</a><a class="nav-cta" href="join.html">Join the society ↗</a></div>
-</nav>
-<main>
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="kicker">A student led community</div>
-      <h1>Make<br>experience<br><span>happen.</span></h1>
-      <p>The Code Society helps students move beyond the classroom — into open source, collaborative projects, and the kind of real work that turns curiosity into capability.</p>
-      <div class="hero-actions"><a class="button" href="join.html">Find your place <span class="arrow">↗</span></a><a class="button secondary" href="#mission">Explore our mission <span class="arrow">↓</span></a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="brand-lockup" href="index.html">
+        <img class="brand-logo-thumb" src="/assets/aistudio/TCS_LOGO_a1053890.jpg" alt="The Code Society monogram" width="34" height="34" referrerpolicy="no-referrer">
+        <span class="brand-wordmark">The Code Society</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#what-we-do">What We Do</a>
+        <a class="nav-link" href="#operating-model">Operating Model</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="careers.html">Careers</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="join.html">Join Us</a>
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M3 6H17M3 10H17M3 14H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </button>
+      </div>
     </div>
-    <div class="hero-art" aria-hidden="true"><div class="orbit one"></div><div class="orbit two"></div><div class="orbit three"></div><div class="core-symbol">C.</div><div class="art-caption">Curiosity → contribution → growth</div></div>
-    <div class="scroll-note">Scroll to explore</div>
-  </section>
-  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Learn in public <b>✳</b> Build with people <b>✳</b> Contribute to open source <b>✳</b> Grow through doing <b>✳</b></span><span>Learn in public <b>✳</b> Build with people <b>✳</b> Contribute to open source <b>✳</b> Grow through doing <b>✳</b></span></div></div>
-  <section class="section" id="mission">
-    <div class="manifesto">
-      <div class="manifesto-aside">01 / The reason we exist</div>
-      <div class="manifesto-copy"><div class="section-kicker">The experience paradox</div><h2>You shouldn't need experience to get your <em>first experience.</em></h2><p>Students are expected to have practical experience before they are given opportunities to gain it. We want to help break that cycle. The Code Society connects learners with real repositories, meaningful projects, and a community where people can learn by contributing — not just by watching from the sidelines.</p></div>
+  </header>
+
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <a class="mobile-drawer-link" href="#about">ABOUT <span>↗</span></a>
+    <a class="mobile-drawer-link" href="#what-we-do">WHAT WE DO <span>↗</span></a>
+    <a class="mobile-drawer-link" href="#mission-vision">MISSION &amp; VISION <span>↗</span></a>
+    <a class="mobile-drawer-link" href="#operating-model">OPERATING MODEL <span>↗</span></a>
+    <a class="mobile-drawer-link" href="#faq">FAQ <span>↗</span></a>
+    <a class="mobile-drawer-link" href="careers.html">CAREERS <span>↗</span></a>
+    <a class="btn btn-primary mobile-drawer-cta" href="join.html">Join Us <span class="text-action-arrow" aria-hidden="true">↗</span></a>
+  </div>
+
+  <main id="main-content">
+    <!-- 1. Home / Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-subheading">BUILD BEYOND THE CLASSROOM.</p>
+          <h1 class="display-title hero-headline">THE CODE SOCIETY</h1>
+
+          <div class="hero-actions">
+            <a class="btn btn-monotone-elevated" href="join.html">Join Us <span class="text-action-arrow" aria-hidden="true">↗</span></a>
+            <a class="text-action" href="#about">About us <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <div class="hero-plaque-col">
+          <div class="logo-plaque">
+            <div class="logo-frame">
+              <img src="/assets/aistudio/TCS_LOGO_a1053890.jpg" alt="The Code Society official embossed monogram logo" width="390" height="390" referrerpolicy="no-referrer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. About -->
+    <section class="section-tone-2" id="about">
+      <div class="container manifesto-grid">
+        <aside class="manifesto-aside">
+          <p class="eyebrow">ABOUT</p>
+          <h3 class="manifesto-aside-title">MORE THAN A COMMUNITY. A STARTING POINT.</h3>
+          <p class="manifesto-aside-note">We aren't just here to teach students how to code. We're here to help them become developers who can build, contribute and make an impact.</p>
+        </aside>
+
+        <div class="manifesto-body">
+          <h2 class="display-title section-heading">BRIDGING ACADEMIC KNOWLEDGE AND REAL-WORLD EXPERIENCE.</h2>
+          <p class="manifesto-prose">The Code Society is a student-driven technology community built to bridge the experience gap faced by aspiring developers. We believe that learning to code is only the beginning — real growth happens when students step beyond tutorials, collaborate on meaningful projects, contribute to open-source initiatives and work alongside developers.</p>
+          <p class="manifesto-prose">Our mission is to make real-world technical experience more accessible by connecting students with open-source opportunities, collaborative projects and a community that encourages continuous learning.</p>
+
+          <div class="proof-strip">
+            <div>
+              <h3 class="proof-item-label">OPEN-SOURCE CONTRIBUTIONS</h3>
+              <p class="proof-item-desc">Participate in active repositories and understand real-world software workflows.</p>
+            </div>
+            <div>
+              <h3 class="proof-item-label">PROJECT COLLABORATION</h3>
+              <p class="proof-item-desc">Work alongside student developers, project administrators and mentors.</p>
+            </div>
+            <div>
+              <h3 class="proof-item-label">HANDS-ON INITIATIVES</h3>
+              <p class="proof-item-desc">Learn through building rather than just consuming tutorials.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. What We Do — Four Roles. One Ecosystem. -->
+    <section class="section-tone-3" id="what-we-do">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <p class="eyebrow">WHAT WE DO</p>
+            <h2 class="display-title section-heading">FOUR ROLES. ONE ECOSYSTEM.</h2>
+          </div>
+          <p class="section-header-summary">Every participant plays a defined role in keeping projects active, contributors supported, and campus communities connected.</p>
+        </div>
+
+        <div class="roles-grid">
+          <article class="role-card role-card-featured">
+            <div>
+              <div class="role-card-header">
+                <h3 class="role-card-title">CONTRIBUTORS</h3>
+                <span class="tabular-index">01</span>
+              </div>
+              <div class="role-meta-pairs">
+                <div>
+                  <span class="role-meta-label">WHAT THEY BRING</span>
+                  <p class="role-meta-text">Skills, effort and collaboration</p>
+                </div>
+                <div>
+                  <span class="role-meta-label">WHAT THEY GAIN</span>
+                  <p class="role-meta-text">Practical experience and recognition</p>
+                </div>
+              </div>
+            </div>
+            <div class="role-flow-foot">Contributors → Build and improve them.</div>
+          </article>
+
+          <article class="role-card">
+            <div>
+              <div class="role-card-header">
+                <h3 class="role-card-title">PROJECT ADMINS</h3>
+                <span class="tabular-index">02</span>
+              </div>
+              <div class="role-meta-pairs">
+                <div>
+                  <span class="role-meta-label">WHAT THEY BRING</span>
+                  <p class="role-meta-text">Projects and development opportunities</p>
+                </div>
+                <div>
+                  <span class="role-meta-label">WHAT THEY GAIN</span>
+                  <p class="role-meta-text">Contributor support and project growth</p>
+                </div>
+              </div>
+            </div>
+            <div class="role-flow-foot">Project Admins → Bring projects.</div>
+          </article>
+
+          <article class="role-card">
+            <div>
+              <div class="role-card-header">
+                <h3 class="role-card-title">CAMPUS ADVOCATES</h3>
+                <span class="tabular-index">03</span>
+              </div>
+              <div class="role-meta-pairs">
+                <div>
+                  <span class="role-meta-label">WHAT THEY BRING</span>
+                  <p class="role-meta-text">Outreach and community building</p>
+                </div>
+                <div>
+                  <span class="role-meta-label">WHAT THEY GAIN</span>
+                  <p class="role-meta-text">Leadership and networking experience</p>
+                </div>
+              </div>
+            </div>
+            <div class="role-flow-foot">Campus Advocates → Expand the ecosystem.</div>
+          </article>
+
+          <article class="role-card">
+            <div>
+              <div class="role-card-header">
+                <h3 class="role-card-title">MENTORS</h3>
+                <span class="tabular-index">04</span>
+              </div>
+              <div class="role-meta-pairs">
+                <div>
+                  <span class="role-meta-label">WHAT THEY BRING</span>
+                  <p class="role-meta-text">Knowledge and guidance</p>
+                </div>
+                <div>
+                  <span class="role-meta-label">WHAT THEY GAIN</span>
+                  <p class="role-meta-text">An opportunity to guide emerging talent</p>
+                </div>
+              </div>
+            </div>
+            <div class="role-flow-foot">Mentors → Guide the process.</div>
+          </article>
+        </div>
+
+        <div class="ecosystem-loop">
+          <div class="ecosystem-loop-item">
+            <strong>PROJECT ADMINS</strong>
+            Bring projects.
+          </div>
+          <div class="ecosystem-loop-item">
+            <strong>CONTRIBUTORS</strong>
+            Build and improve them.
+          </div>
+          <div class="ecosystem-loop-item">
+            <strong>MENTORS</strong>
+            Guide the process.
+          </div>
+          <div class="ecosystem-loop-item">
+            <strong>CAMPUS ADVOCATES</strong>
+            Expand the ecosystem.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 & 5. Our Mission & Our Vision -->
+    <section class="section-tone-1" id="mission-vision">
+      <div class="container">
+        <div class="mission-vision-grid">
+          <article class="mv-card mv-card-featured">
+            <p class="eyebrow">04. OUR MISSION</p>
+            <h2>OUR MISSION</h2>
+            <p class="mv-lead">To eliminate the experience barrier faced by aspiring developers by creating accessible pathways into real-world software development.</p>
+            <p class="mv-body">We aim to connect talent with opportunity, projects with contributors, and students with the guidance and recognition they need to grow.</p>
+          </article>
+
+          <article class="mv-card">
+            <p class="eyebrow">05. OUR VISION</p>
+            <h2>OUR VISION</h2>
+            <p class="mv-lead">A world where students don't have to wait until graduation to gain meaningful industry experience.</p>
+            <p class="mv-body">We envision a connected ecosystem where students actively contribute to projects, build technical credibility, develop leadership skills and become recognised members of the global developer community.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Operating Model -->
+    <section class="section-tone-2" id="operating-model">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <p class="eyebrow">OPERATING MODEL</p>
+            <h2 class="display-title section-heading">HOW THE ECOSYSTEM OPERATES.</h2>
+          </div>
+          <p class="section-header-summary">A structured progression from discovering open opportunities to building demonstrable credibility.</p>
+        </div>
+
+        <div class="operating-banner">
+          DISCOVER → CONNECT → CONTRIBUTE → GROW → GET RECOGNISED
+        </div>
+
+        <div class="operating-grid">
+          <article class="operating-step">
+            <span class="operating-step-num">01</span>
+            <h3 class="operating-step-title">DISCOVER</h3>
+            <p class="operating-step-desc">Students discover The Code Society and its opportunities.</p>
+          </article>
+
+          <article class="operating-step">
+            <span class="operating-step-num">02</span>
+            <h3 class="operating-step-title">CONNECT</h3>
+            <p class="operating-step-desc">Contributors connect with project administrators and mentors.</p>
+          </article>
+
+          <article class="operating-step">
+            <span class="operating-step-num">03</span>
+            <h3 class="operating-step-title">CONTRIBUTE</h3>
+            <p class="operating-step-desc">Students work on actual projects and make meaningful contributions.</p>
+          </article>
+
+          <article class="operating-step">
+            <span class="operating-step-num">04</span>
+            <h3 class="operating-step-title">GROW</h3>
+            <p class="operating-step-desc">They develop technical, collaborative and leadership skills.</p>
+          </article>
+
+          <article class="operating-step">
+            <span class="operating-step-num">05</span>
+            <h3 class="operating-step-title">GET RECOGNISED</h3>
+            <p class="operating-step-desc">Their work and involvement help build their portfolios, credibility and visibility.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pathways -->
+    <section class="section-tone-1" id="join">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <p class="eyebrow">ENTRY PATHWAYS</p>
+            <h2 class="display-title section-heading">START WHERE YOU ARE. BUILD FROM THERE.</h2>
+          </div>
+        </div>
+
+        <div class="pathways-grid">
+          <a class="pathway-card" href="join.html">
+            <div>
+              <p class="pathway-card-kicker">VOLUNTEER &amp; COMMUNITY PARTICIPATION</p>
+              <h3>JOIN THE COMMUNITY.</h3>
+              <p>Register as a contributor or Campus Advocate, explore available projects, and collaborate with mentors and peers.</p>
+            </div>
+            <div class="pathway-card-foot">
+              <span>Explore ways to get involved</span>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a class="pathway-card" href="careers.html">
+            <div>
+              <p class="pathway-card-kicker">CORE TEAM &amp; FUNCTIONAL LEADERSHIP</p>
+              <h3>WORK WITH THE CORE TEAM.</h3>
+              <p>Take on a defined responsibility and help shape the open-source initiatives, engineering builds, and direction of the society.</p>
+            </div>
+            <div class="pathway-card-foot">
+              <span>View open core roles</span>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Refined FAQ Section -->
+    <section class="section-tone-3" id="faq">
+      <div class="container faq-layout">
+        <aside class="faq-aside">
+          <p class="eyebrow">FREQUENTLY ASKED QUESTIONS</p>
+          <h2 class="display-title section-heading">HOW THE ORGANISATION OPERATES.</h2>
+          <p class="manifesto-aside-note" style="margin-top: 16px;">Have a project or a specific question? Reach us at <a href="mailto:thecodingsocietyofficial@gmail.com" style="text-decoration: underline; color: var(--ink-accent);">thecodingsocietyofficial@gmail.com</a>.</p>
+        </aside>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="true" aria-controls="faq-panel-1">
+              <span class="faq-q-wrap">
+                <span class="faq-num">01.</span>
+                <span class="faq-q-text">What is The Code Society?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-1" class="faq-panel">
+              The Code Society is a student-driven initiative connecting students with real-world software projects, open-source contribution opportunities, mentors and campus networks to help them gain practical experience.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2">
+              <span class="faq-q-wrap">
+                <span class="faq-num">02.</span>
+                <span class="faq-q-text">How can I join as a contributor?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-2" class="faq-panel" hidden>
+              Students can register to become contributors. Based on their interests and skills, they can explore available projects, work on assigned tasks and collaborate with project teams.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3">
+              <span class="faq-q-wrap">
+                <span class="faq-num">03.</span>
+                <span class="faq-q-text">I have a project. Can I bring it to The Code Society?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-3" class="faq-panel" hidden>
+              Yes! We welcome project administrators who want to bring their repositories and projects into our ecosystem and collaborate with student contributors.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4">
+              <span class="faq-q-wrap">
+                <span class="faq-num">04.</span>
+                <span class="faq-q-text">Do I need to be an experienced developer to contribute?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-4" class="faq-panel" hidden>
+              No. Beginners are welcome. You can start with tasks appropriate to your current skill level and gradually take on more challenging contributions.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-5">
+              <span class="faq-q-wrap">
+                <span class="faq-num">05.</span>
+                <span class="faq-q-text">What is a Campus Advocate?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-5" class="faq-panel" hidden>
+              A Campus Advocate represents The Code Society within their college or campus. They help expand our reach, introduce students to opportunities and build awareness about our initiatives.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-6">
+              <span class="faq-q-wrap">
+                <span class="faq-num">06.</span>
+                <span class="faq-q-text">Does The Code Society provide mentorship?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-6" class="faq-panel" hidden>
+              Yes. Our mentorship network aims to provide technical guidance, project support and insights to help contributors navigate their development journey.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-7">
+              <span class="faq-q-wrap">
+                <span class="faq-num">07.</span>
+                <span class="faq-q-text">Will I receive a certificate?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-7" class="faq-panel" hidden>
+              Recognition, certificates or other credentials may be provided depending on the specific programme and its completion criteria. We prioritise meaningful contributions and demonstrable work.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-8">
+              <span class="faq-q-wrap">
+                <span class="faq-num">08.</span>
+                <span class="faq-q-text">Can I join as both a contributor and a Campus Advocate?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-8" class="faq-panel" hidden>
+              Yes, provided you meet the requirements of both roles and can actively participate in their responsibilities.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-9">
+              <span class="faq-q-wrap">
+                <span class="faq-num">09.</span>
+                <span class="faq-q-text">Is The Code Society limited to computer science students?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-9" class="faq-panel" hidden>
+              No. Anyone interested in technology, software development, open source and collaborative building can explore opportunities within our ecosystem.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-10">
+              <span class="faq-q-wrap">
+                <span class="faq-num">10.</span>
+                <span class="faq-q-text">What makes The Code Society different from a regular coding community?</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-panel-10" class="faq-panel" hidden>
+              We don't just bring students together to learn. We connect them with actual projects, structured contribution opportunities, project administrators, mentors and campus networks to help them build practical experience.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing Call to Action -->
+    <section class="closing-band">
+      <div class="container closing-inner">
+        <div class="closing-copy">
+          <p class="eyebrow">YOUR FIRST CONTRIBUTION STARTS HERE.</p>
+          <h2 class="display-title">DON'T WAIT FOR THE OPPORTUNITY. HELP BUILD IT.</h2>
+          <p>Connect with projects, contributors, mentors, and campus communities.</p>
+        </div>
+        <div class="closing-actions">
+          <a class="btn btn-monotone-elevated" href="join.html">Join Us <span class="text-action-arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline" href="mailto:thecodingsocietyofficial@gmail.com">Get in touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand-lockup" href="index.html">
+            <img class="brand-logo-thumb" src="/assets/aistudio/TCS_LOGO_a1053890.jpg" alt="The Code Society monogram" width="34" height="34" referrerpolicy="no-referrer">
+            <span class="brand-wordmark">The Code Society</span>
+          </a>
+          <p class="footer-summary">A student-driven technology community bridging academic knowledge and real-world experience through open source, project collaboration, and mentorship.</p>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">NAVIGATION</h3>
+          <ul class="footer-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#what-we-do">What We Do</a></li>
+            <li><a href="#mission-vision">Mission &amp; Vision</a></li>
+            <li><a href="#operating-model">Operating Model</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">GET INVOLVED</h3>
+          <ul class="footer-nav">
+            <li><a href="join.html">Join the Community</a></li>
+            <li><a href="volunteer.html">Volunteer Application</a></li>
+            <li><a href="careers.html">Core Team Careers</a></li>
+            <li><a href="mailto:thecodingsocietyofficial@gmail.com">thecodingsocietyofficial@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 The Code Society</span>
+        <span>DISCOVER · CONNECT · CONTRIBUTE · GROW · GET RECOGNISED</span>
+      </div>
     </div>
-  </section>
-  <section class="pillars" id="approach">
-    <div class="section-kicker">02 / How we make it happen</div><h2>Less gatekeeping.<br><em>More getting things done.</em></h2>
-    <div class="pillar-grid">
-      <article class="pillar"><div class="pillar-no">01 — CONTRIBUTE</div><div class="pillar-mark">↗</div><h3>Open source, made approachable.</h3><p>Discover repositories that need contributors, learn how real codebases work, and make changes that matter beyond an assignment.</p></article>
-      <article class="pillar"><div class="pillar-no">02 — COLLABORATE</div><div class="pillar-mark">✳</div><h3>Build with a community.</h3><p>Work alongside people with different strengths, exchange knowledge, and turn shared ideas into tangible projects.</p></article>
-      <article class="pillar"><div class="pillar-no">03 — GROW</div><div class="pillar-mark">↗</div><h3>Turn effort into evidence.</h3><p>Develop practical skills, take ownership, and build a body of work that shows what you can do.</p></article>
-    </div>
-  </section>
-  <section class="pathways" id="opportunities">
-    <div class="section-kicker">03 / Find your entry point</div><h2>Start where you are.<br><em>Build from there.</em></h2>
-    <div class="pathway-grid">
-      <a class="pathway" href="join.html"><div class="pathway-tag">For curious contributors</div><h3>Join the community.</h3><p>Volunteer, explore a team, contribute your skills, and learn alongside people who want to make things happen.</p><div class="pathway-link">Explore ways to get involved <span>↗</span></div></a>
-      <a class="pathway" href="careers.html"><div class="pathway-tag">For people ready to lead</div><h3>Work with the core team.</h3><p>Take on a defined responsibility and help shape the projects, operations, and creative direction of the society.</p><div class="pathway-link">View open roles <span>↗</span></div></a>
-    </div>
-  </section>
-  <section class="closing">
-    <div class="closing-copy"><div class="section-kicker">Your next chapter starts here</div><h2>Don't wait for the opportunity.<br>Help build it.</h2><p>Bring your curiosity. Find your people. Make something real.</p></div>
-    <a class="button" href="join.html">Become part of TCS <span class="arrow">↗</span></a>
-  </section>
-</main>
-<footer><span class="footer-brand">THE CODE SOCIETY</span><span>© 2026 The Code Society</span><a href="mailto:thecodingsocietyofficial@gmail.com">Get in touch ↗</a></footer>
+  </footer>
 </body>
 </html>

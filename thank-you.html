@@ -1,1 +1,66 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Application received — The Code Society</title><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 20%,#4b1724,transparent 65%),#090708;color:#f5e9e8;font-family:'Source Sans Pro',sans-serif;text-align:center;padding:24px}.box{max-width:550px}.mark{font:60px 'Times New Roman';color:#bd7182;letter-spacing:-10px;padding-right:10px}h1{font:48px 'Times New Roman';margin:28px 0 14px}p{color:#b9a8aa;line-height:1.8}.button{display:inline-block;margin-top:22px;padding:15px 24px;background:#7b2b3e;color:white;text-decoration:none;font-size:13px}</style></head><body><main class="box"><div class="mark">CS</div><h1>Application received.</h1><p>Thank you for your interest in The Code Society. Your application has been submitted. If your profile matches what we’re looking for, our team will reach out.</p><a class="button" href="index.html">Back to home ↗</a></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16060a">
+  <meta name="description" content="Your application has been received by The Code Society.">
+  <title>Application Received — The Code Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="brand.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="brand-lockup" href="index.html">
+        <img class="brand-logo-thumb" src="/assets/aistudio/TCS_LOGO_a1053890.jpg" alt="The Code Society monogram" width="34" height="34" referrerpolicy="no-referrer">
+        <span class="brand-wordmark">The Code Society</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#what-we-do">What We Do</a>
+        <a class="nav-link" href="index.html#operating-model">Operating Model</a>
+        <a class="nav-link" href="index.html#faq">FAQ</a>
+        <a class="nav-link" href="careers.html">Careers</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="join.html">Join Us</a>
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M3 6H17M3 10H17M3 14H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <a class="mobile-drawer-link" href="index.html#about">ABOUT <span>↗</span></a>
+    <a class="mobile-drawer-link" href="index.html#what-we-do">WHAT WE DO <span>↗</span></a>
+    <a class="mobile-drawer-link" href="index.html#operating-model">OPERATING MODEL <span>↗</span></a>
+    <a class="mobile-drawer-link" href="index.html#faq">FAQ <span>↗</span></a>
+    <a class="mobile-drawer-link" href="careers.html">CAREERS <span>↗</span></a>
+    <a class="btn btn-primary mobile-drawer-cta" href="join.html">Join Us <span class="text-action-arrow" aria-hidden="true">↗</span></a>
+  </div>
+
+  <main id="main-content" class="confirmation-wrap">
+    <section class="confirmation-card">
+      <img class="confirmation-logo" src="/assets/aistudio/TCS_LOGO_a1053890.jpg" alt="The Code Society official embossed monogram logo" width="72" height="72" referrerpolicy="no-referrer">
+      <p class="eyebrow">SUBMISSION CONFIRMED</p>
+      <h1 class="display-title">APPLICATION RECEIVED.</h1>
+      <p>Thank you for your interest in The Code Society. Your application has been submitted to our team. If your background and goals align with an open track, we will reach out soon.</p>
+      <div class="confirmation-actions">
+        <a class="btn btn-monotone-elevated" href="index.html">Back to home <span class="text-action-arrow" aria-hidden="true">↗</span></a>
+        <a class="btn btn-outline" href="join.html">Explore pathways</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
