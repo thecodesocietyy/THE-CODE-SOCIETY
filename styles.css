@@ -457,9 +457,8 @@ textarea {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-  align-items: stretch;
-  gap: clamp(36px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
 }
 
 .hero-copy {
@@ -470,13 +469,13 @@ textarea {
 }
 
 .hero-headline {
-  font-size: clamp(3rem, 5.3vw, 5.05rem);
+  font-size: clamp(3.35rem, 6.8vw, 6.1rem);
   font-weight: 700;
   letter-spacing: 0.015em;
   line-height: 0.98;
   text-transform: uppercase;
-  max-width: 11ch;
-  margin-bottom: 18px;
+  max-width: 14ch;
+  margin-bottom: 28px;
 }
 
 .hero-subheading {
@@ -615,44 +614,59 @@ textarea {
 }
 
 /* About / Manifesto Section */
+#about .container {
+  max-width: 100%;
+  padding-inline: clamp(24px, 5vw, 72px);
+}
+
 .manifesto-grid {
   display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-  gap: clamp(32px, 5vw, 64px);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
   align-items: start;
 }
 
 .manifesto-aside {
-  position: sticky;
-  top: calc(var(--nav-height) + 32px);
+  position: static;
+  width: 100%;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line-subtle);
 }
 
 .manifesto-aside-title {
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 500;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 600;
   color: var(--ink-primary);
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 .manifesto-aside-note {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--ink-secondary);
-  line-height: 1.7;
-  max-width: 28ch;
+  line-height: 1.75;
+  width: 100%;
+  max-width: none;
   margin: 0;
 }
 
+.manifesto-body {
+  width: 100%;
+}
+
 .manifesto-body .section-heading {
-  margin-bottom: 28px;
+  max-width: none;
+  width: 100%;
+  margin-bottom: 24px;
 }
 
 .manifesto-prose {
   font-size: 17px;
   line-height: 1.85;
   color: var(--ink-secondary);
-  max-width: 64ch;
-  margin: 0 0 44px;
+  width: 100%;
+  max-width: none;
+  margin: 0 0 24px;
 }
 
 .manifesto-quote {
@@ -676,6 +690,9 @@ textarea {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-subtle);
 }
 
 .proof-item-label {
