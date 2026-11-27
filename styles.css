@@ -897,14 +897,18 @@ textarea {
 
 .faq-layout {
   display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-  gap: clamp(32px, 5vw, 64px);
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 44px);
   align-items: start;
 }
 
 .faq-aside {
-  position: sticky;
-  top: calc(var(--nav-height) + 32px);
+  position: static;
+  width: 100%;
+}
+
+.faq-aside .section-heading {
+  max-width: none;
 }
 
 .faq-aside a {
