@@ -1,7 +1,7 @@
 /* ==========================================================================
-   THE CODE SOCIETY — Monotone Oxblood Editorial Design System
+   THE CODE SOCIETY — Classic Cream, Logo Oxblood Red & Editorial Black System
    Typography: Rosie Brown Serif Demo (Display) & NewYork (Body/UI)
-   Palette: Strictly monotone burgundy/oxblood derived from TCS_LOGO_a1053890.jpg
+   Palette: Classic Cream Canvas + Official Logo Red (#481522) + Black Ink
    ========================================================================== */
 
 @font-face {
@@ -21,26 +21,26 @@
 }
 
 :root {
-  /* Monotone Oxblood / Burgundy Tonal Scale (No white, no cream backgrounds) */
-  --tone-0: #0f0407;
-  --tone-1: #16060a;
-  --tone-2: #1f090f;
-  --tone-3: #2a0d15;
-  --tone-4: #36111b;
-  --tone-5: #421420; /* Signature logo cardstock tone */
-  --tone-6: #571b2b;
-  --tone-7: #6d2336;
+  /* Classic Cream Canvas Scale */
+  --cream-canvas: #f5f0e6;
+  --cream-surface: #ede6d8;
+  --cream-card: #faf7f0;
+  --cream-deep: #e4dccb;
 
-  /* Tonal Hairlines */
-  --line-subtle: rgba(218, 168, 178, 0.14);
-  --line-medium: rgba(218, 168, 178, 0.25);
-  --line-strong: rgba(218, 168, 178, 0.44);
+  /* Official Logo Red / Oxblood Shade (Main focal elements) */
+  --red-core: #481522;
+  --red-hover: #621c2e;
+  --red-deep: #350e18;
+  --red-tint: rgba(72, 21, 34, 0.06);
+  --red-border: rgba(72, 21, 34, 0.28);
 
-  /* Monotone Rose-Blush Ink Scale */
-  --ink-primary: #ead7da;
-  --ink-secondary: #c6a4ab;
-  --ink-muted: #9f7c83;
-  --ink-accent: #dfb3bc;
+  /* Editorial Black Scale (General UI, rules, and body copy) */
+  --ink-black: #121010;
+  --ink-body: #262121;
+  --ink-muted: #58504e;
+  --line-subtle: rgba(18, 16, 16, 0.14);
+  --line-medium: rgba(18, 16, 16, 0.26);
+  --line-strong: rgba(18, 16, 16, 0.5);
 
   /* Typography */
   --font-display: 'Rosie Brown Serif Demo', 'Rosie Brown Serif', 'Cormorant Garamond', Georgia, serif;
@@ -63,13 +63,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-height) + 24px);
-  background-color: var(--tone-1);
+  background-color: var(--cream-canvas);
 }
 
 body {
   margin: 0;
-  background-color: var(--tone-1);
-  color: var(--ink-primary);
+  background-color: var(--cream-canvas);
+  color: var(--ink-body);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.7;
@@ -115,12 +115,12 @@ textarea {
 }
 
 ::selection {
-  background: var(--tone-6);
-  color: var(--ink-primary);
+  background: var(--red-core);
+  color: var(--cream-canvas);
 }
 
 :focus-visible {
-  outline: 2px solid var(--ink-accent);
+  outline: 2px solid var(--red-core);
   outline-offset: 3px;
 }
 
@@ -130,9 +130,9 @@ textarea {
   top: 0;
   z-index: 100;
   padding: 12px 20px;
-  background: var(--tone-5);
-  color: var(--ink-primary);
-  border: 1px solid var(--line-strong);
+  background: var(--red-core);
+  color: var(--cream-canvas);
+  border: 1px solid var(--ink-black);
   font-weight: 600;
   font-size: 14px;
 }
@@ -158,7 +158,7 @@ textarea {
   top: 0;
   z-index: 50;
   height: var(--nav-height);
-  background: rgba(22, 6, 10, 0.92);
+  background: rgba(245, 240, 230, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-subtle);
@@ -186,16 +186,16 @@ textarea {
   height: 34px;
   border-radius: var(--radius-sm);
   object-fit: cover;
-  border: 1px solid var(--line-medium);
+  border: 1px solid var(--red-border);
   flex-shrink: 0;
 }
 
 .brand-wordmark {
   font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--ink-primary);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--red-core);
   line-height: 1;
 }
 
@@ -210,7 +210,7 @@ textarea {
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 500;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   white-space: nowrap;
   flex-shrink: 0;
   padding-block: 6px;
@@ -224,7 +224,7 @@ textarea {
   right: 0;
   bottom: 0;
   height: 1px;
-  background: var(--ink-accent);
+  background: var(--red-core);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 200ms var(--ease-out);
@@ -232,7 +232,7 @@ textarea {
 
 .nav-link:hover,
 .nav-link[aria-current='page'] {
-  color: var(--ink-primary);
+  color: var(--red-core);
 }
 
 .nav-link:hover::after,
@@ -254,17 +254,17 @@ textarea {
   width: 44px;
   height: 44px;
   padding: 0;
-  background: var(--tone-3);
+  background: var(--cream-card);
   border: 1px solid var(--line-medium);
   border-radius: var(--radius-sm);
-  color: var(--ink-primary);
+  color: var(--ink-black);
   cursor: pointer;
   transition: border-color 180ms var(--ease-out), background-color 180ms var(--ease-out);
 }
 
 .nav-toggle:hover {
-  border-color: var(--line-strong);
-  background: var(--tone-4);
+  border-color: var(--red-core);
+  background: var(--cream-surface);
 }
 
 /* Mobile Drawer */
@@ -273,7 +273,7 @@ textarea {
   position: fixed;
   inset: var(--nav-height) 0 0 0;
   z-index: 49;
-  background: var(--tone-0);
+  background: var(--cream-canvas);
   border-top: 1px solid var(--line-subtle);
   padding: 28px clamp(20px, 4vw, 48px);
   flex-direction: column;
@@ -291,10 +291,14 @@ textarea {
   padding: 16px 0;
   min-height: 48px;
   font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 500;
-  color: var(--ink-primary);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink-black);
   border-bottom: 1px solid var(--line-subtle);
+}
+
+.mobile-drawer-link span {
+  color: var(--red-core);
 }
 
 .mobile-drawer-cta {
@@ -304,7 +308,7 @@ textarea {
 }
 
 /* ==========================================================================
-   Buttons & Links (Strictly Monotone Oxblood)
+   Buttons & Links (Our Red Shade for Main CTAs, Black for General Secondary)
    ========================================================================== */
 
 .btn {
@@ -318,7 +322,7 @@ textarea {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
   flex-shrink: 0;
   cursor: pointer;
@@ -331,39 +335,30 @@ textarea {
   transform: translateY(0);
 }
 
-.btn-primary {
-  background: var(--tone-5);
-  border-color: var(--line-medium);
-  color: var(--ink-primary);
-}
-
-.btn-primary:hover {
-  background: var(--tone-6);
-  border-color: var(--line-strong);
-  transform: translateY(-1px);
-}
-
+.btn-primary,
 .btn-monotone-elevated {
-  background: var(--tone-6);
-  border-color: var(--line-strong);
-  color: var(--ink-primary);
+  background: var(--red-core);
+  border-color: var(--red-core);
+  color: var(--cream-canvas);
 }
 
+.btn-primary:hover,
 .btn-monotone-elevated:hover {
-  background: var(--tone-7);
-  border-color: var(--ink-accent);
+  background: var(--red-hover);
+  border-color: var(--red-hover);
   transform: translateY(-1px);
 }
 
 .btn-outline {
-  background: rgba(66, 20, 32, 0.25);
-  border-color: var(--line-medium);
-  color: var(--ink-primary);
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--ink-black);
 }
 
 .btn-outline:hover {
-  background: var(--tone-4);
-  border-color: var(--line-strong);
+  background: var(--ink-black);
+  border-color: var(--ink-black);
+  color: var(--cream-canvas);
   transform: translateY(-1px);
 }
 
@@ -381,14 +376,14 @@ textarea {
   padding: 8px 4px;
   font-family: var(--font-body);
   font-size: 15px;
-  font-weight: 500;
-  color: var(--ink-secondary);
+  font-weight: 600;
+  color: var(--ink-black);
   white-space: nowrap;
   transition: color 180ms var(--ease-out);
 }
 
 .text-action:hover {
-  color: var(--ink-primary);
+  color: var(--red-core);
 }
 
 .text-action-arrow {
@@ -411,7 +406,7 @@ textarea {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-accent);
+  color: var(--red-core);
   margin: 0 0 18px;
 }
 
@@ -422,25 +417,20 @@ textarea {
   line-height: 1.06;
   text-wrap: balance;
   margin: 0;
-  color: var(--ink-primary);
-}
-
-.display-title em {
-  font-style: normal;
-  font-weight: 600;
-  color: var(--ink-accent);
+  color: var(--ink-black);
 }
 
 .tabular-index {
   font-family: var(--font-body);
   font-variant-numeric: tabular-nums;
   font-size: 13px;
-  letter-spacing: 0.04em;
-  color: var(--ink-accent);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--red-core);
 }
 
 /* ==========================================================================
-   Hero Section (Home)
+   Hero Section (Classic Cream Canvas + Bold Red Focal Headline)
    ========================================================================== */
 
 .hero {
@@ -448,10 +438,10 @@ textarea {
   min-height: calc(100svh - var(--nav-height));
   display: flex;
   align-items: center;
-  padding-block: clamp(48px, 7vh, 88px);
+  padding-block: clamp(56px, 8vh, 104px);
   background:
-    radial-gradient(circle at 76% 42%, rgba(74, 21, 35, 0.62) 0%, rgba(22, 6, 10, 0) 58%),
-    linear-gradient(155deg, var(--tone-1) 0%, var(--tone-0) 100%);
+    radial-gradient(circle at 82% 24%, rgba(72, 21, 34, 0.06) 0%, rgba(245, 240, 230, 0) 55%),
+    var(--cream-canvas);
   border-bottom: 1px solid var(--line-subtle);
 }
 
@@ -474,6 +464,7 @@ textarea {
   letter-spacing: 0.015em;
   line-height: 0.98;
   text-transform: uppercase;
+  color: var(--red-core);
   max-width: 14ch;
   margin-bottom: 28px;
 }
@@ -484,14 +475,14 @@ textarea {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-accent);
+  color: var(--ink-black);
   margin: 0 0 18px;
 }
 
 .hero-lead {
   font-size: clamp(1.02rem, 1.25vw, 1.15rem);
   line-height: 1.78;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   max-width: 52ch;
   margin: 0 0 36px;
 }
@@ -503,114 +494,35 @@ textarea {
   gap: 16px 24px;
 }
 
-.hero-meta-strip {
-  margin-top: clamp(36px, 5vh, 56px);
-  padding-top: 22px;
-  border-top: 1px solid var(--line-subtle);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 22px;
-  font-size: 14px;
-  color: var(--ink-secondary);
-}
-
-.hero-meta-sep {
-  color: var(--ink-muted);
-}
-
-.hero-plaque-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.logo-plaque {
-  background: linear-gradient(165deg, var(--tone-3), var(--tone-1));
-  border: 1px solid var(--line-subtle);
-  border-radius: var(--radius-md);
-  padding: clamp(20px, 2.5vw, 28px);
-  box-shadow: 0 28px 60px rgba(7, 2, 4, 0.65);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.logo-frame {
-  position: relative;
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  max-width: 390px;
-  margin-inline: auto;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  border: 1px solid var(--line-subtle);
-  background: var(--tone-5);
-}
-
-.logo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.plaque-ledger {
-  border-top: 1px solid var(--line-subtle);
-  padding-top: 16px;
-  display: grid;
-  gap: 10px;
-}
-
-.plaque-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.plaque-key {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 10px;
-  color: var(--ink-primary);
-  font-weight: 500;
-}
-
-.plaque-val {
-  color: var(--ink-secondary);
-  text-align: right;
-  font-size: 13px;
-}
-
 /* ==========================================================================
-   Monotone Section Rhythm (Alternating Deep Burgundy Tones)
+   Classic Cream Section Rhythm (No dark blocks overtaking background)
    ========================================================================== */
 
 .section-tone-2 {
-  background-color: var(--tone-2);
-  color: var(--ink-primary);
-  padding-block: clamp(72px, 10vw, 124px);
+  background-color: var(--cream-surface);
+  color: var(--ink-body);
+  padding-block: clamp(72px, 10vw, 120px);
   border-bottom: 1px solid var(--line-subtle);
 }
 
 .section-tone-3 {
-  background-color: var(--tone-3);
-  color: var(--ink-primary);
-  padding-block: clamp(72px, 10vw, 124px);
+  background-color: var(--cream-canvas);
+  color: var(--ink-body);
+  padding-block: clamp(72px, 10vw, 120px);
   border-bottom: 1px solid var(--line-subtle);
 }
 
 .section-tone-1 {
-  background-color: var(--tone-1);
-  color: var(--ink-primary);
-  padding-block: clamp(72px, 10vw, 124px);
+  background-color: var(--cream-surface);
+  color: var(--ink-body);
+  padding-block: clamp(72px, 10vw, 120px);
   border-bottom: 1px solid var(--line-subtle);
 }
 
 .section-heading {
-  font-size: clamp(2.2rem, 3.9vw, 3.55rem);
+  font-size: clamp(2.15rem, 3.8vw, 3.45rem);
   max-width: 19ch;
+  color: var(--ink-black);
 }
 
 /* About / Manifesto Section */
@@ -637,13 +549,13 @@ textarea {
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 2vw, 1.75rem);
   font-weight: 600;
-  color: var(--ink-primary);
+  color: var(--red-core);
   margin: 0 0 10px;
 }
 
 .manifesto-aside-note {
   font-size: 16px;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   line-height: 1.75;
   width: 100%;
   max-width: none;
@@ -658,32 +570,16 @@ textarea {
   max-width: none;
   width: 100%;
   margin-bottom: 24px;
+  color: var(--red-core);
 }
 
 .manifesto-prose {
   font-size: 17px;
   line-height: 1.85;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   width: 100%;
   max-width: none;
   margin: 0 0 24px;
-}
-
-.manifesto-quote {
-  padding-block: 26px;
-  border-top: 1px solid var(--line-medium);
-  border-bottom: 1px solid var(--line-medium);
-  margin: 0 0 44px;
-  max-width: 64ch;
-}
-
-.manifesto-quote p {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.3vw, 1.95rem);
-  font-style: normal;
-  line-height: 1.38;
-  color: var(--ink-primary);
-  margin: 0;
 }
 
 .proof-strip {
@@ -699,19 +595,19 @@ textarea {
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 600;
-  color: var(--ink-primary);
+  color: var(--red-core);
   margin: 0 0 6px;
 }
 
 .proof-item-desc {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   margin: 0;
 }
 
 /* ==========================================================================
-   Initiatives — Asymmetric Monotone Bento
+   Shared Header Split & Cards
    ========================================================================== */
 
 .section-header-split {
@@ -719,241 +615,221 @@ textarea {
   justify-content: space-between;
   align-items: flex-end;
   gap: 32px;
-  margin-bottom: clamp(40px, 5vw, 58px);
+  margin-bottom: clamp(40px, 5vw, 56px);
 }
 
 .section-header-summary {
   max-width: 40ch;
   font-size: 15px;
   line-height: 1.75;
-  color: var(--ink-secondary);
+  color: var(--ink-muted);
   margin: 0;
 }
 
-.bento-grid {
+/* Four Roles. One Ecosystem. */
+.roles-grid {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
-.bento-card {
+.role-card {
+  background: var(--cream-card);
+  border: 1px solid var(--line-medium);
   border-radius: var(--radius-md);
-  padding: clamp(28px, 3.5vw, 44px);
+  padding: clamp(26px, 3.2vw, 38px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 200ms var(--ease-out), border-color 200ms var(--ease-out);
 }
 
-.bento-card:hover {
+.role-card:hover {
   transform: translateY(-2px);
-  border-color: var(--line-strong);
+  border-color: var(--red-core);
 }
 
-.bento-card-feature {
-  grid-column: span 7;
-  background: linear-gradient(155deg, var(--tone-5) 0%, var(--tone-3) 100%);
-  color: var(--ink-primary);
-  border: 1px solid var(--line-medium);
-  min-height: 340px;
+.role-card-featured {
+  background: var(--cream-card);
+  border-color: var(--red-border);
+  box-shadow: inset 0 3px 0 0 var(--red-core);
 }
 
-.bento-card-secondary {
-  grid-column: span 5;
-  background: var(--tone-2);
-  color: var(--ink-primary);
-  border: 1px solid var(--line-subtle);
-  min-height: 340px;
+.role-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line-subtle);
+  margin-bottom: 20px;
 }
 
-.bento-card-wide {
-  grid-column: span 12;
-  background: var(--tone-2);
-  color: var(--ink-primary);
-  border: 1px solid var(--line-subtle);
+.role-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.2vw, 2rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--red-core);
+  margin: 0;
+}
+
+.role-meta-pairs {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 32px;
-  align-items: center;
+  gap: 16px;
 }
 
-.bento-index {
-  font-family: var(--font-body);
-  font-variant-numeric: tabular-nums;
+.role-meta-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-black);
+  margin-bottom: 4px;
+}
+
+.role-meta-text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-body);
+  margin: 0;
+}
+
+.role-flow-foot {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-subtle);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--red-core);
+}
+
+.ecosystem-loop {
+  margin-top: 24px;
+  background: var(--cream-card);
+  border: 1px solid var(--line-medium);
+  border-radius: var(--radius-md);
+  padding: 22px clamp(20px, 3vw, 32px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px 24px;
+}
+
+.ecosystem-loop-item {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-body);
+}
+
+.ecosystem-loop-item strong {
+  display: block;
   font-size: 13px;
   letter-spacing: 0.06em;
-  color: var(--ink-accent);
-  margin-bottom: 22px;
+  text-transform: uppercase;
+  color: var(--red-core);
+  margin-bottom: 4px;
 }
 
-.bento-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.85rem, 2.6vw, 2.45rem);
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-  margin: 0 0 14px;
-  color: var(--ink-primary);
-}
-
-.bento-desc {
-  font-size: 15px;
-  line-height: 1.78;
-  color: var(--ink-secondary);
-  margin: 0;
-  max-width: 50ch;
-}
-
-.bento-footer-meta {
-  margin-top: 28px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line-subtle);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-  font-size: 13px;
-  color: var(--ink-secondary);
-}
-
-.evidence-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--line-subtle);
-}
-
-.evidence-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line-subtle);
-  font-size: 14px;
-}
-
-.evidence-list strong {
-  font-weight: 600;
-  color: var(--ink-primary);
-}
-
-.evidence-list span {
-  color: var(--ink-secondary);
-  text-align: right;
-}
-
-/* ==========================================================================
-   Open Source Tracks & Pathways
-   ========================================================================== */
-
-.tracks-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: start;
-  margin-bottom: clamp(56px, 7vw, 84px);
-}
-
-.track-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 28px;
-}
-
-.track-tab {
-  min-height: 42px;
-  padding: 8px 18px;
-  border-radius: var(--radius-sm);
-  background: var(--tone-2);
-  border: 1px solid var(--line-subtle);
-  color: var(--ink-secondary);
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: background-color 180ms var(--ease-out), color 180ms var(--ease-out),
-    border-color 180ms var(--ease-out);
-}
-
-.track-tab:hover {
-  color: var(--ink-primary);
-  border-color: var(--line-medium);
-}
-
-.track-tab.is-active {
-  background: var(--tone-5);
-  border-color: var(--line-strong);
-  color: var(--ink-primary);
-}
-
-.track-panel {
-  background: var(--tone-3);
-  border: 1px solid var(--line-subtle);
-  border-radius: var(--radius-md);
-  padding: clamp(28px, 3.5vw, 40px);
-}
-
-.track-panel-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line-subtle);
-  margin-bottom: 22px;
-}
-
-.track-panel-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.7rem, 2.5vw, 2.2rem);
-  font-weight: 500;
-  margin: 0;
-  color: var(--ink-primary);
-}
-
-.track-panel-meta {
-  font-size: 13px;
-  color: var(--ink-accent);
-}
-
-.track-panel-desc {
-  font-size: 15px;
-  line-height: 1.78;
-  color: var(--ink-secondary);
-  margin: 0 0 24px;
-}
-
-.track-focus-list {
-  list-style: none;
-  margin: 0 0 28px;
-  padding: 0;
+/* Mission & Vision Grid */
+.mission-vision-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 24px;
+  gap: 24px;
 }
 
-.track-focus-list li {
-  font-size: 14px;
-  color: var(--ink-primary);
-  padding-top: 10px;
-  border-top: 1px solid var(--line-subtle);
+.mv-card {
+  background: var(--cream-card);
+  border: 1px solid var(--line-medium);
+  border-radius: var(--radius-md);
+  padding: clamp(28px, 4vw, 44px);
 }
 
-.track-panel-actions {
+.mv-card-featured {
+  border-color: var(--red-border);
+  box-shadow: inset 0 3px 0 0 var(--red-core);
+}
+
+.mv-card h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 2.8vw, 2.5rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--red-core);
+  margin: 0 0 18px;
+}
+
+.mv-lead {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.72;
+  color: var(--ink-black);
+  margin: 0 0 16px;
+}
+
+.mv-body {
+  font-size: 15px;
+  line-height: 1.78;
+  color: var(--ink-body);
+  margin: 0;
+}
+
+/* Operating Model (5-Stage Sequence) */
+.operating-banner {
+  margin-bottom: 32px;
+  padding: 18px 24px;
+  background: var(--red-core);
+  border: 1px solid var(--red-core);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream-canvas);
+  text-align: center;
+}
+
+.operating-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.operating-step {
+  background: var(--cream-card);
+  border: 1px solid var(--line-medium);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.pathways-header {
-  padding-top: clamp(44px, 6vw, 68px);
-  border-top: 1px solid var(--line-subtle);
-  margin-bottom: 36px;
+.operating-step-num {
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red-core);
 }
 
+.operating-step-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ink-black);
+  margin: 0;
+}
+
+.operating-step-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-body);
+  margin: 0;
+}
+
+/* Pathways Split */
 .pathways-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -964,38 +840,41 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 310px;
+  min-height: 290px;
   padding: clamp(28px, 3.5vw, 42px);
-  background: linear-gradient(160deg, var(--tone-3), var(--tone-2));
-  border: 1px solid var(--line-subtle);
+  background: var(--cream-card);
+  border: 1px solid var(--line-medium);
   border-radius: var(--radius-md);
   transition: transform 200ms var(--ease-out), border-color 200ms var(--ease-out);
 }
 
 .pathway-card:hover {
   transform: translateY(-2px);
-  border-color: var(--line-strong);
+  border-color: var(--red-core);
 }
 
 .pathway-card-kicker {
   font-size: 13px;
-  color: var(--ink-accent);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--red-core);
   margin: 0 0 18px;
 }
 
 .pathway-card h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 2.6vw, 2.45rem);
-  font-weight: 500;
+  font-size: clamp(1.85rem, 2.5vw, 2.35rem);
+  font-weight: 600;
   line-height: 1.15;
   margin: 0 0 12px;
-  color: var(--ink-primary);
+  color: var(--ink-black);
 }
 
 .pathway-card p {
   font-size: 15px;
   line-height: 1.78;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   margin: 0 0 28px;
   max-width: 44ch;
 }
@@ -1009,19 +888,109 @@ textarea {
   justify-content: space-between;
   font-size: 14px;
   font-weight: 600;
-  color: var(--ink-primary);
+  color: var(--red-core);
 }
 
 /* ==========================================================================
-   Closing CTA Banner (Signature Matte Oxblood)
+   FAQ Accordion (Classic Cream + Black Questions + Red Numbers/Controls)
+   ========================================================================== */
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.faq-aside {
+  position: sticky;
+  top: calc(var(--nav-height) + 32px);
+}
+
+.faq-aside a {
+  color: var(--red-core) !important;
+}
+
+.faq-list {
+  border-top: 1px solid var(--line-medium);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.faq-trigger {
+  width: 100%;
+  min-height: 60px;
+  padding: 20px 4px;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink-black);
+  transition: color 180ms var(--ease-out);
+}
+
+.faq-trigger:hover {
+  color: var(--red-core);
+}
+
+.faq-q-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.faq-num {
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red-core);
+  flex-shrink: 0;
+}
+
+.faq-q-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.faq-icon {
+  font-size: 20px;
+  line-height: 1;
+  color: var(--red-core);
+  flex-shrink: 0;
+  transition: transform 200ms var(--ease-out);
+}
+
+.faq-trigger[aria-expanded='true'] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-panel {
+  padding: 0 4px 22px 34px;
+  font-size: 15px;
+  line-height: 1.78;
+  color: var(--ink-body);
+}
+
+.faq-panel[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Closing CTA Banner (Classic Cream Canvas with Red Headline & Actions)
    ========================================================================== */
 
 .closing-band {
-  background:
-    radial-gradient(circle at 85% 50%, rgba(109, 35, 54, 0.45), transparent 55%),
-    var(--tone-5);
-  color: var(--ink-primary);
-  padding-block: clamp(64px, 8vw, 104px);
+  background: var(--cream-surface);
+  color: var(--ink-body);
+  padding-block: clamp(64px, 8vw, 100px);
   border-bottom: 1px solid var(--line-subtle);
 }
 
@@ -1036,11 +1005,12 @@ textarea {
   font-size: clamp(2.15rem, 4vw, 3.55rem);
   max-width: 17ch;
   margin-bottom: 14px;
+  color: var(--red-core);
 }
 
 .closing-copy p {
   font-size: 16px;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   margin: 0;
   max-width: 48ch;
 }
@@ -1054,13 +1024,14 @@ textarea {
 }
 
 /* ==========================================================================
-   Footer
+   Footer (Classic Cream + Black Text + Red Headers)
    ========================================================================== */
 
 .site-footer {
-  background: var(--tone-0);
-  color: var(--ink-secondary);
+  background: var(--cream-deep);
+  color: var(--ink-body);
   padding-block: clamp(44px, 6vw, 68px) 32px;
+  border-top: 1px solid var(--line-medium);
 }
 
 .footer-top {
@@ -1074,16 +1045,16 @@ textarea {
 .footer-summary {
   font-size: 14px;
   line-height: 1.75;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   max-width: 38ch;
   margin: 14px 0 0;
 }
 
 .footer-col-title {
   font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--ink-primary);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--red-core);
   margin: 0 0 14px;
 }
 
@@ -1097,12 +1068,12 @@ textarea {
 
 .footer-nav a {
   font-size: 14px;
-  color: var(--ink-secondary);
+  color: var(--ink-black);
   transition: color 180ms var(--ease-out);
 }
 
 .footer-nav a:hover {
-  color: var(--ink-primary);
+  color: var(--red-core);
 }
 
 .footer-bottom {
@@ -1121,11 +1092,9 @@ textarea {
    ========================================================================== */
 
 .page-hero {
-  background:
-    radial-gradient(circle at 50% 0%, rgba(74, 21, 35, 0.56), transparent 65%),
-    var(--tone-1);
-  color: var(--ink-primary);
-  padding-block: clamp(56px, 8vw, 96px);
+  background: var(--cream-canvas);
+  color: var(--ink-body);
+  padding-block: clamp(56px, 8vw, 92px);
   border-bottom: 1px solid var(--line-subtle);
 }
 
@@ -1144,13 +1113,14 @@ textarea {
 
 .page-hero-title {
   font-size: clamp(2.55rem, 5vw, 4.3rem);
+  color: var(--red-core);
   margin-bottom: 18px;
 }
 
 .page-hero-lead {
   font-size: 16px;
   line-height: 1.78;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   max-width: 58ch;
   margin: 0;
 }
@@ -1160,18 +1130,18 @@ textarea {
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  font-weight: 500;
-  color: var(--ink-secondary);
+  font-weight: 600;
+  color: var(--ink-black);
   margin-bottom: 24px;
   min-height: 36px;
   transition: color 180ms var(--ease-out);
 }
 
 .back-crumb:hover {
-  color: var(--ink-primary);
+  color: var(--red-core);
 }
 
-/* Join Choice Grid (Monotone Oxblood Cards) */
+/* Join Choice Grid */
 .join-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1180,9 +1150,9 @@ textarea {
 }
 
 .join-card {
-  background: var(--tone-3);
-  color: var(--ink-primary);
-  border: 1px solid var(--line-subtle);
+  background: var(--cream-card);
+  color: var(--ink-body);
+  border: 1px solid var(--line-medium);
   border-radius: var(--radius-md);
   padding: clamp(28px, 4vw, 46px);
   display: flex;
@@ -1192,34 +1162,36 @@ textarea {
 
 .join-card:hover {
   transform: translateY(-2px);
-  border-color: var(--line-strong);
+  border-color: var(--red-core);
 }
 
 .join-card-featured {
-  background: linear-gradient(160deg, var(--tone-5), var(--tone-3));
-  border-color: var(--line-medium);
+  border-color: var(--red-border);
+  box-shadow: inset 0 3px 0 0 var(--red-core);
 }
 
 .join-card-num {
   font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--ink-accent);
+  text-transform: uppercase;
+  color: var(--red-core);
   margin-bottom: 18px;
 }
 
 .join-card h2 {
   font-family: var(--font-display);
   font-size: clamp(1.95rem, 2.8vw, 2.55rem);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.15;
   margin: 0 0 14px;
-  color: var(--ink-primary);
+  color: var(--ink-black);
 }
 
 .join-card-desc {
   font-size: 15px;
   line-height: 1.78;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   margin: 0 0 24px;
 }
 
@@ -1235,17 +1207,17 @@ textarea {
   border-bottom: 1px solid var(--line-subtle);
   font-size: 14px;
   line-height: 1.6;
-  color: var(--ink-primary);
+  color: var(--ink-black);
 }
 
 .join-card-action {
   margin-top: auto;
 }
 
-/* Application Form Shell (Strictly Monotone Oxblood) */
+/* Application Form Shell */
 .form-section {
-  background: var(--tone-2);
-  color: var(--ink-primary);
+  background: var(--cream-surface);
+  color: var(--ink-body);
   padding-block: clamp(48px, 7vw, 88px);
   border-bottom: 1px solid var(--line-subtle);
 }
@@ -1263,8 +1235,8 @@ textarea {
 }
 
 .form-sidebar-card {
-  background: var(--tone-3);
-  border: 1px solid var(--line-subtle);
+  background: var(--cream-card);
+  border: 1px solid var(--line-medium);
   border-radius: var(--radius-md);
   padding: 28px;
 }
@@ -1272,15 +1244,15 @@ textarea {
 .form-sidebar-card h2 {
   font-family: var(--font-display);
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0 0 12px;
-  color: var(--ink-primary);
+  color: var(--red-core);
 }
 
 .form-sidebar-card p {
   font-size: 14px;
   line-height: 1.75;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   margin: 0 0 20px;
 }
 
@@ -1296,25 +1268,26 @@ textarea {
   border-bottom: 1px solid var(--line-subtle);
   font-size: 14px;
   line-height: 1.6;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
 }
 
 .form-checklist strong {
   display: block;
-  color: var(--ink-primary);
-  font-weight: 600;
+  color: var(--ink-black);
+  font-weight: 700;
   margin-bottom: 2px;
 }
 
 .form-checklist a {
-  color: var(--ink-accent);
+  color: var(--red-core);
+  font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .form-card {
-  background: var(--tone-3);
-  border: 1px solid var(--line-subtle);
+  background: var(--cream-card);
+  border: 1px solid var(--line-medium);
   border-radius: var(--radius-md);
   padding: clamp(24px, 4.5vw, 48px);
 }
@@ -1333,18 +1306,18 @@ textarea {
 .form-card-header h2 {
   font-family: var(--font-display);
   font-size: clamp(1.65rem, 2.4vw, 2.05rem);
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
-  color: var(--ink-primary);
+  color: var(--red-core);
 }
 
 .required-legend {
   font-size: 13px;
-  color: var(--ink-secondary);
+  color: var(--ink-muted);
 }
 
 .required-star {
-  color: var(--ink-accent);
+  color: var(--red-core);
   font-weight: 700;
 }
 
@@ -1367,7 +1340,7 @@ textarea {
 .field label {
   font-size: 14px;
   font-weight: 600;
-  color: var(--ink-primary);
+  color: var(--ink-black);
 }
 
 .field-optional {
@@ -1381,18 +1354,18 @@ textarea {
   width: 100%;
   min-height: 46px;
   padding: 11px 14px;
-  background: var(--tone-1);
+  background: var(--cream-canvas);
   border: 1px solid var(--line-medium);
   border-radius: var(--radius-sm);
-  color: var(--ink-primary);
+  color: var(--ink-black);
   font-family: var(--font-body);
   font-size: 15px;
   transition: border-color 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
 }
 
 .field select option {
-  background: var(--tone-2);
-  color: var(--ink-primary);
+  background: var(--cream-canvas);
+  color: var(--ink-black);
 }
 
 .field input::placeholder,
@@ -1404,8 +1377,8 @@ textarea {
 .field select:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--ink-accent);
-  box-shadow: 0 0 0 3px rgba(218, 168, 178, 0.16);
+  border-color: var(--red-core);
+  box-shadow: 0 0 0 3px rgba(72, 21, 34, 0.14);
 }
 
 .field textarea {
@@ -1414,12 +1387,12 @@ textarea {
   line-height: 1.65;
 }
 
-/* Custom Accessible File Dropzone (Monotone) */
+/* Custom Accessible File Dropzone */
 .file-dropzone {
   position: relative;
   border: 1px dashed var(--line-strong);
   border-radius: var(--radius-sm);
-  background: var(--tone-1);
+  background: var(--cream-canvas);
   padding: 24px 20px;
   text-align: center;
   cursor: pointer;
@@ -1428,8 +1401,8 @@ textarea {
 
 .file-dropzone:hover,
 .file-dropzone.is-dragover {
-  border-color: var(--ink-accent);
-  background: var(--tone-2);
+  border-color: var(--red-core);
+  background: var(--cream-surface);
 }
 
 .file-dropzone input[type='file'] {
@@ -1445,7 +1418,7 @@ textarea {
 .file-dropzone-title {
   font-size: 15px;
   font-weight: 600;
-  color: var(--ink-primary);
+  color: var(--ink-black);
   margin: 0 0 4px;
 }
 
@@ -1466,16 +1439,18 @@ textarea {
 
 .file-feedback.is-valid {
   display: block;
-  background: var(--tone-4);
-  border: 1px solid var(--line-strong);
-  color: var(--ink-primary);
+  background: var(--red-tint);
+  border: 1px solid var(--red-border);
+  color: var(--red-core);
+  font-weight: 600;
 }
 
 .file-feedback.is-error {
   display: block;
-  background: rgba(120, 22, 42, 0.45);
-  border: 1px solid rgba(235, 140, 155, 0.55);
-  color: #f4c6cf;
+  background: rgba(160, 25, 45, 0.1);
+  border: 1px solid rgba(160, 25, 45, 0.45);
+  color: #7c1122;
+  font-weight: 600;
 }
 
 .form-submit-row {
@@ -1503,16 +1478,15 @@ textarea {
   display: grid;
   place-items: center;
   padding: 56px clamp(20px, 4vw, 48px);
-  background:
-    radial-gradient(circle at 50% 28%, rgba(74, 21, 35, 0.56), transparent 60%),
-    var(--tone-1);
+  background: var(--cream-canvas);
 }
 
 .confirmation-card {
   width: 100%;
   max-width: 620px;
-  background: var(--tone-3);
-  border: 1px solid var(--line-subtle);
+  background: var(--cream-card);
+  border: 1px solid var(--red-border);
+  box-shadow: inset 0 3px 0 0 var(--red-core);
   border-radius: var(--radius-md);
   padding: clamp(32px, 5vw, 56px);
   text-align: center;
@@ -1524,18 +1498,19 @@ textarea {
   border-radius: var(--radius-sm);
   object-fit: cover;
   margin: 0 auto 24px;
-  border: 1px solid var(--line-medium);
+  border: 1px solid var(--red-border);
 }
 
 .confirmation-card h1 {
   font-size: clamp(2.2rem, 4vw, 3.1rem);
+  color: var(--red-core);
   margin-bottom: 16px;
 }
 
 .confirmation-card p {
   font-size: 16px;
   line-height: 1.78;
-  color: var(--ink-secondary);
+  color: var(--ink-body);
   margin: 0 0 32px;
 }
 
@@ -1544,453 +1519,6 @@ textarea {
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-}
-
-/* ==========================================================================
-   The Experience Paradox, 4-Card What We Do, Vision, Who Can Join & FAQ
-   ========================================================================== */
-
-.paradox-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: start;
-}
-
-.paradox-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--line-subtle);
-}
-
-.paradox-list li {
-  display: flex;
-  align-items: baseline;
-  gap: 18px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line-subtle);
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--ink-primary);
-}
-
-.paradox-num {
-  font-variant-numeric: tabular-nums;
-  font-size: 13px;
-  color: var(--ink-accent);
-  flex-shrink: 0;
-}
-
-/* 4-Card What We Do Grid */
-.what-we-do-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.pillar-card {
-  background: var(--tone-2);
-  border: 1px solid var(--line-subtle);
-  border-radius: var(--radius-md);
-  padding: clamp(28px, 3.5vw, 40px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 270px;
-  transition: transform 200ms var(--ease-out), border-color 200ms var(--ease-out);
-}
-
-.pillar-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--line-strong);
-}
-
-.pillar-card-featured {
-  background: linear-gradient(155deg, var(--tone-5) 0%, var(--tone-3) 100%);
-  border-color: var(--line-medium);
-}
-
-.pillar-card-index {
-  font-variant-numeric: tabular-nums;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  color: var(--ink-accent);
-  margin-bottom: 18px;
-}
-
-.pillar-card-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
-  font-weight: 600;
-  line-height: 1.15;
-  color: var(--ink-primary);
-  margin: 0 0 12px;
-}
-
-.pillar-card-desc {
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--ink-secondary);
-  margin: 0;
-}
-
-.pillar-card-tagline {
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line-subtle);
-  font-family: var(--font-display);
-  font-style: normal;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--ink-accent);
-}
-
-/* Four Roles. One Ecosystem. */
-.roles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.role-card {
-  background: var(--tone-2);
-  border: 1px solid var(--line-subtle);
-  border-radius: var(--radius-md);
-  padding: clamp(26px, 3.2vw, 38px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 200ms var(--ease-out), border-color 200ms var(--ease-out);
-}
-
-.role-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--line-strong);
-}
-
-.role-card-featured {
-  background: linear-gradient(155deg, var(--tone-5) 0%, var(--tone-3) 100%);
-  border-color: var(--line-medium);
-}
-
-.role-card-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line-subtle);
-  margin-bottom: 20px;
-}
-
-.role-card-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.55rem, 2.2vw, 2rem);
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--ink-primary);
-  margin: 0;
-}
-
-.role-meta-pairs {
-  display: grid;
-  gap: 16px;
-}
-
-.role-meta-label {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-accent);
-  margin-bottom: 4px;
-}
-
-.role-meta-text {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--ink-secondary);
-  margin: 0;
-}
-
-.role-flow-foot {
-  margin-top: 22px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line-subtle);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink-primary);
-}
-
-.ecosystem-loop {
-  margin-top: 24px;
-  background: var(--tone-2);
-  border: 1px solid var(--line-subtle);
-  border-radius: var(--radius-md);
-  padding: 22px clamp(20px, 3vw, 32px);
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px 24px;
-}
-
-.ecosystem-loop-item {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--ink-secondary);
-}
-
-.ecosystem-loop-item strong {
-  display: block;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-accent);
-  margin-bottom: 4px;
-}
-
-/* Operating Model (5-Stage Sequence) */
-.operating-banner {
-  margin-bottom: 32px;
-  padding: 18px 24px;
-  background: var(--tone-3);
-  border: 1px solid var(--line-medium);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-primary);
-  text-align: center;
-}
-
-.operating-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.operating-step {
-  background: var(--tone-3);
-  border: 1px solid var(--line-subtle);
-  border-radius: var(--radius-md);
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.operating-step-num {
-  font-variant-numeric: tabular-nums;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink-accent);
-}
-
-.operating-step-title {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--ink-primary);
-  margin: 0;
-}
-
-.operating-step-desc {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--ink-secondary);
-  margin: 0;
-}
-
-/* Mission & Vision Grid */
-.mission-vision-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.mv-card {
-  background: var(--tone-3);
-  border: 1px solid var(--line-subtle);
-  border-radius: var(--radius-md);
-  padding: clamp(28px, 4vw, 44px);
-}
-
-.mv-card-featured {
-  background: linear-gradient(155deg, var(--tone-5) 0%, var(--tone-3) 100%);
-  border-color: var(--line-medium);
-}
-
-.mv-card h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.85rem, 2.8vw, 2.5rem);
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--ink-primary);
-  margin: 0 0 18px;
-}
-
-.mv-lead {
-  font-size: 17px;
-  line-height: 1.72;
-  color: var(--ink-primary);
-  margin: 0 0 16px;
-}
-
-.mv-body {
-  font-size: 15px;
-  line-height: 1.78;
-  color: var(--ink-secondary);
-  margin: 0;
-}
-
-/* Vision Band inside Initiatives */
-.vision-panel {
-  background: linear-gradient(155deg, var(--tone-4) 0%, var(--tone-2) 100%);
-  border: 1px solid var(--line-medium);
-  border-radius: var(--radius-md);
-  padding: clamp(28px, 4vw, 48px);
-  margin-bottom: clamp(44px, 6vw, 64px);
-  display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
-  gap: clamp(24px, 4vw, 48px);
-  align-items: center;
-}
-
-.vision-prose {
-  display: grid;
-  gap: 16px;
-  font-size: 15px;
-  line-height: 1.78;
-  color: var(--ink-secondary);
-}
-
-.vision-prose p {
-  margin: 0;
-}
-
-/* Who Can Join Section */
-.who-join-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: start;
-  margin-bottom: clamp(48px, 6vw, 72px);
-}
-
-.welcome-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px 24px;
-  border-top: 1px solid var(--line-subtle);
-  padding-top: 20px;
-}
-
-.welcome-list li {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--ink-primary);
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line-subtle);
-}
-
-.welcome-note {
-  margin-top: 20px;
-  font-size: 14px;
-  font-style: normal;
-  color: var(--ink-accent);
-}
-
-/* FAQ Accordion */
-.faq-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: start;
-}
-
-.faq-aside {
-  position: sticky;
-  top: calc(var(--nav-height) + 32px);
-}
-
-.faq-list {
-  border-top: 1px solid var(--line-subtle);
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--line-subtle);
-}
-
-.faq-trigger {
-  width: 100%;
-  min-height: 60px;
-  padding: 20px 4px;
-  background: transparent;
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  text-align: left;
-  cursor: pointer;
-  color: var(--ink-primary);
-  transition: color 180ms var(--ease-out);
-}
-
-.faq-trigger:hover {
-  color: var(--ink-accent);
-}
-
-.faq-q-wrap {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-}
-
-.faq-num {
-  font-variant-numeric: tabular-nums;
-  font-size: 13px;
-  color: var(--ink-accent);
-  flex-shrink: 0;
-}
-
-.faq-q-text {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
-  font-weight: 500;
-  line-height: 1.3;
-}
-
-.faq-icon {
-  font-size: 20px;
-  line-height: 1;
-  color: var(--ink-accent);
-  flex-shrink: 0;
-  transition: transform 200ms var(--ease-out);
-}
-
-.faq-trigger[aria-expanded='true'] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-panel {
-  padding: 0 4px 22px 34px;
-  font-size: 15px;
-  line-height: 1.78;
-  color: var(--ink-secondary);
-}
-
-.faq-panel[hidden] {
-  display: none;
 }
 
 /* ==========================================================================
@@ -2006,11 +1534,7 @@ textarea {
 @media (max-width: 1024px) {
   .hero-grid,
   .manifesto-grid,
-  .paradox-grid,
   .mission-vision-grid,
-  .vision-panel,
-  .who-join-grid,
-  .tracks-layout,
   .faq-layout,
   .form-layout {
     grid-template-columns: 1fr;
@@ -2024,16 +1548,6 @@ textarea {
   .faq-aside,
   .form-sidebar {
     position: static;
-  }
-
-  .bento-card-feature,
-  .bento-card-secondary,
-  .bento-card-wide {
-    grid-column: span 12;
-  }
-
-  .bento-card-wide {
-    grid-template-columns: 1fr;
   }
 
   .footer-top {
@@ -2065,11 +1579,8 @@ textarea {
   .roles-grid,
   .ecosystem-loop,
   .operating-grid,
-  .what-we-do-grid,
-  .welcome-list,
   .pathways-grid,
   .join-grid,
-  .track-focus-list,
   .form-grid {
     grid-template-columns: 1fr;
   }
