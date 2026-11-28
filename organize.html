@@ -14,8 +14,8 @@
 <h1>Help us <span>build what’s next.</span></h1>
 <p class="intro">Have the skills, ideas, or drive to help run The Code Society? Tell us a little about yourself and the role you’d like to take on. We’ll review your application and reach out by email if we think you’re a great fit.</p>
 <section class="form-shell" aria-label="Organizer application">
-<form id="organizer-form">
-<div class="honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+<form id="organizer-form" action="https://formsubmit.co/thecodesocietyoffical@gmail.com" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_subject" value="New organizer application | The Code Society"><input type="hidden" name="_next" value="https://thecodesociety.vercel.app/organize.html?submitted=1"><div class="honeypot" aria-hidden="true"><label>Leave this field empty<input name="_honey" tabindex="-1" autocomplete="off"></label></div>
 <div class="form-grid">
 <div class="field"><label for="fullName">Full name <span class="required">*</span></label><input id="fullName" name="fullName" autocomplete="name" required maxlength="120" placeholder="Your full name"></div>
 <div class="field"><label for="email">Email ID <span class="required">*</span></label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></div>
@@ -26,7 +26,7 @@
 <div class="field"><label for="linkedin">LinkedIn profile link <span class="required">*</span></label><input id="linkedin" name="linkedin" type="url" required maxlength="500" placeholder="https://linkedin.com/in/yourprofile"></div>
 <div class="field"><label for="portfolio">Portfolio link <span style="color:rgba(255,255,255,.4)">(optional)</span></label><input id="portfolio" name="portfolio" type="url" maxlength="500" placeholder="https://yourportfolio.com"></div>
 <div class="field full"><label for="role">Which role(s) could you take on? <span class="required">*</span></label><select id="role" name="role" required><option value="" disabled selected>Select a role</option><option>Social Media Manager</option><option>Marketing Manager</option><option>Project and Operations Team</option></select></div>
-<div class="field full"><label for="resume">Resume upload <span class="required">*</span></label><div class="upload"><input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required></div><p class="hint">PDF, DOC, or DOCX. Maximum file size: 8 MB.</p></div>
+<div class="field full"><label for="resume">Resume upload <span class="required">*</span></label><div class="upload"><input id="resume" name="attachment" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required></div><p class="hint">PDF, DOC, or DOCX. Maximum file size: 8 MB.</p></div>
 <div class="field full"><label for="fit">Tell us a bit about how you’re a good fit for this role. <span class="required">*</span></label><textarea id="fit" name="fit" required minlength="30" maxlength="4000" placeholder="Share relevant skills, experience, ideas, or what you’d bring to the team..."></textarea></div>
 </div>
 <div class="submit-row"><button class="submit" id="submit-button" type="submit">SUBMIT APPLICATION ↗</button><p class="closing-note">We’ll contact you through email if we think you’re a great fit.</p></div>
@@ -37,7 +37,8 @@
 <footer class="site-footer"><span>© 2026 The Code Society. Built by the community.</span><a href="/">BACK TO HOME ↑</a></footer>
 <script>
 const form=document.getElementById('organizer-form'),button=document.getElementById('submit-button'),status=document.getElementById('form-status');
-form.addEventListener('submit',async event=>{event.preventDefault();status.textContent='';status.className='status';if(!form.reportValidity())return;const file=document.getElementById('resume').files[0];if(file&&file.size>8*1024*1024){status.textContent='Your resume is larger than 8 MB. Please upload a smaller file.';status.classList.add('error');return;}button.disabled=true;button.textContent='SENDING APPLICATION…';try{const response=await fetch('/api/organizer-application',{method:'POST',body:new FormData(form)});const result=await response.json().catch(()=>({}));if(!response.ok)throw new Error(result.error||'Your application could not be sent. Please try again.');form.reset();status.textContent='Application submitted. Thank you for your interest in The Code Society.';status.classList.add('success');}catch(error){status.textContent=error.message||'Something went wrong. Please try again later.';status.classList.add('error');}finally{button.disabled=false;button.textContent='SUBMIT APPLICATION ↗';}});
-</script>
+form.addEventListener('submit',event=>{const file=document.getElementById('resume').files[0];if(file&&file.size>8*1024*1024){event.preventDefault();status.textContent='Your resume is larger than 8 MB. Please upload a smaller file.';status.className='status error';return;}button.disabled=true;button.textContent='SENDING APPLICATION…';});
+if(new URLSearchParams(window.location.search).get('submitted')==='1'){status.textContent='Application submitted. Thank you for your interest in The Code Society.';status.className='status success';window.history.replaceState({},document.title,window.location.pathname);}
+</script>>
 </body>
 </html>
