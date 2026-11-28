@@ -13,9 +13,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed.' });
   }
 
-  if (!process.env.RESEND_API_KEY || !process.env.RESEND_FROM_EMAIL) {
+  if (!process.env.RESEND_API_KEY) {
     return res.status(503).json({ error: 'The application form is not configured yet. Please contact us by email instead.' });
   }
+
+  // Resend's shared onboarding sender works for testing, but can only deliver
+  // to the account owner's verified email address. A verified domain is needed
+  // before accepting applications from the public.
+  const fromEmail = process.env.RESEND_FROM_EMAIL || 'The Code Society <onboarding@resend.dev>';
 
   const form = formidable({
     multiples: false,
@@ -68,7 +73,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: { Authorization: 'Bearer ' + process.env.RESEND_API_KEY, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        from: process.env.RESEND_FROM_EMAIL,
+        from: fromEmail,
         to: [INBOX],
         reply_to: value('email'),
         subject: 'Organizer application: ' + value('fullName') + ' — ' + value('role'),
