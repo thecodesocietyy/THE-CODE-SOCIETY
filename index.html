@@ -114,150 +114,134 @@
     }
 
     .roles {
-      border-top: 1px solid rgba(255,255,255,.14);
-      border-bottom: 1px solid rgba(255,255,255,.14);
-      scroll-margin-top: 24px;
+      width: 100%;
+      padding: clamp(76px, 9vw, 120px) clamp(24px, 6vw, 88px);
+      border-top: 1px solid rgba(255,255,255,.12);
+      scroll-margin-top: 30px;
     }
-    .roles-tabs {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-bottom: 1px solid rgba(255,255,255,.14);
-    }
-    .role-tab {
-      min-height: 170px;
-      padding: 28px 32px;
+    .roles-inner { width: min(100%, 1440px); margin: 0 auto; }
+    .roles-heading {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-end;
       justify-content: space-between;
-      gap: 28px;
-      text-align: left;
-      color: #eaf0f4;
-      background: #05090d;
-      border: 0;
-      border-right: 1px solid rgba(255,255,255,.12);
-      border-bottom: 3px solid transparent;
-      cursor: pointer;
-      transition: background .25s ease, color .25s ease, border-color .25s ease;
+      gap: 32px;
+      margin-bottom: 46px;
     }
-    .role-tab:last-child { border-right: 0; }
-    .role-tab:hover { background: #0b1218; }
-    .role-tab[aria-selected="true"] {
-      color: #20d7f5;
-      border-bottom-color: #20d7f5;
-      background: #0a141b;
-    }
-    .role-number {
-      color: #718493;
-      font: 11px/1.2 monospace;
-      letter-spacing: .18em;
-    }
-    .role-symbol { font-size: 24px; line-height: 1; }
-    .role-name { font-size: clamp(16px, 1.5vw, 23px); font-weight: 700; letter-spacing: -.04em; }
-    .role-detail {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      min-height: 540px;
-      background: radial-gradient(ellipse at 12% 20%, rgba(22,75,91,.13), transparent 48%), #05090d;
-    }
-    .role-intro {
-      padding: clamp(52px, 7vw, 100px) clamp(28px, 6vw, 96px);
-      border-right: 1px solid rgba(255,255,255,.14);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
-    .role-big-icon {
-      width: 116px; height: 116px;
-      display: grid; place-items: center;
-      border: 1px solid rgba(32,215,245,.55);
-      border-radius: 28px;
-      color: #20d7f5;
-      font-size: 42px;
-      margin-bottom: 62px;
-    }
-    .role-path {
-      margin: 0 0 24px;
-      color: #718493;
+    .roles-kicker {
+      margin: 0 0 18px;
+      color: #ed2929;
       font: 11px/1.4 monospace;
       letter-spacing: .2em;
+      text-transform: uppercase;
     }
-    .role-intro h2 {
-      margin: 0 0 20px;
-      color: #f3f7fa;
-      font-size: clamp(48px, 6vw, 92px);
-      line-height: .98;
-      letter-spacing: -.075em;
-      font-weight: 600;
-    }
-    .role-description {
-      max-width: 650px;
+    .roles-heading h2 {
+      max-width: 680px;
       margin: 0;
-      color: #aab8c3;
-      font-size: clamp(16px, 1.5vw, 21px);
+      color: #fff;
+      font-size: clamp(38px, 5.6vw, 70px);
+      line-height: .98;
+      letter-spacing: -.07em;
+    }
+    .roles-heading h2 span { color: #ed2929; }
+    .roles-intro {
+      max-width: 310px;
+      margin: 0 0 4px;
+      color: rgba(255,255,255,.58);
+      font-size: 15px;
       line-height: 1.7;
     }
-    .role-join {
-      display: inline-flex;
-      align-items: center;
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
-      margin-top: 42px;
-      padding: 12px 16px;
-      color: #eaf0f4;
-      border: 1px solid rgba(32,215,245,.5);
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 17px;
-      transition: background .2s ease, border-color .2s ease;
     }
-    .role-join:hover { background: rgba(32,215,245,.1); border-color: #20d7f5; }
-    .role-mission {
-      padding: clamp(52px, 7vw, 100px) clamp(28px, 5.6vw, 96px);
+    .role-card {
+      min-height: 300px;
+      position: relative;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-items: flex-start;
+      padding: 26px 24px 24px;
+      overflow: hidden;
+      background: #080808;
+      border: 1px solid rgba(255,255,255,.13);
+      text-decoration: none;
+      color: #fff;
+      transition: border-color .25s ease, background .25s ease, transform .25s ease;
     }
-    .mission-label {
-      margin: 0 0 38px;
-      color: #718493;
-      font: 11px/1.4 monospace;
-      letter-spacing: .2em;
+    .role-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -70px;
+      top: -75px;
+      border: 1px solid rgba(237,41,41,.16);
+      border-radius: 50%;
+      transition: transform .35s ease, border-color .35s ease;
     }
-    .mission-list { list-style: none; padding: 0; margin: 0; }
-    .mission-list li {
+    .role-card:hover {
+      background: #100909;
+      border-color: rgba(237,41,41,.7);
+      transform: translateY(-5px);
+    }
+    .role-card:hover::after { transform: scale(1.45); border-color: rgba(237,41,41,.45); }
+    .role-card-top {
+      width: 100%;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(255,255,255,.14);
-      color: #aab8c3;
-      font-size: clamp(15px, 1.35vw, 19px);
-      line-height: 1.5;
+      margin-bottom: 46px;
     }
-    .mission-list li::before {
-      content: "✓";
-      flex: 0 0 30px;
-      width: 30px; height: 30px;
-      display: grid; place-items: center;
-      border: 1px solid rgba(83,211,169,.65);
-      border-radius: 8px;
-      color: #53d3a9;
+    .role-card-number {
+      color: rgba(255,255,255,.42);
+      font: 11px/1.4 monospace;
+      letter-spacing: .16em;
+    }
+    .role-card-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      color: #ed2929;
+      border: 1px solid rgba(237,41,41,.42);
+      border-radius: 50%;
+      font-size: 17px;
+    }
+    .role-card h3 {
+      margin: 0 0 12px;
+      font-size: clamp(19px, 1.7vw, 24px);
+      letter-spacing: -.05em;
+    }
+    .role-card p {
+      margin: 0;
+      max-width: 290px;
+      color: rgba(255,255,255,.58);
       font-size: 14px;
+      line-height: 1.7;
     }
-    @media (max-width: 800px) {
-      .roles-tabs { grid-template-columns: repeat(2, 1fr); }
-      .role-tab { min-height: 130px; padding: 22px; }
-      .role-detail { grid-template-columns: 1fr; }
-      .role-intro { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
-      .role-big-icon { margin-bottom: 42px; }
+    .role-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 30px;
+      color: #ed2929;
+      font-size: 13px;
+      font-weight: 700;
     }
-    @media (max-width: 480px) {
-      .roles-tabs { grid-template-columns: 1fr 1fr; }
-      .role-tab { min-height: 112px; padding: 16px; gap: 18px; }
-      .role-name { font-size: 15px; }
-      .role-intro, .role-mission { padding: 48px 24px; }
-      .role-intro h2 { font-size: 52px; }
+    .role-card-link span { transition: transform .2s ease; }
+    .role-card:hover .role-card-link span { transform: translate(3px,-3px); }
+    @media (max-width: 1000px) {
+      .role-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .role-card { min-height: 270px; }
+    }
+    @media (max-width: 600px) {
+      .roles-heading { display: block; margin-bottom: 30px; }
+      .roles-intro { margin-top: 18px; }
+      .role-grid { grid-template-columns: 1fr; gap: 10px; }
+      .role-card { min-height: 230px; }
+      .role-card-top { margin-bottom: 30px; }
     }
 
     @media (max-width: 600px) {
@@ -304,84 +288,46 @@
       </div>
     </section>
 
-    <section class="roles" id="roles" aria-label="Ways to get involved">
-      <div class="roles-tabs" role="tablist" aria-label="Choose your role">
-        <button class="role-tab" id="tab-contributor" role="tab" aria-selected="true" aria-controls="role-panel" data-role="contributor">
-          <span class="role-number">ROLE_01</span><span class="role-symbol">⌘</span><span class="role-name">Contributor</span>
-        </button>
-        <button class="role-tab" id="tab-admin" role="tab" aria-selected="false" aria-controls="role-panel" data-role="admin">
-          <span class="role-number">ROLE_02</span><span class="role-symbol">◉</span><span class="role-name">Project Admin</span>
-        </button>
-        <button class="role-tab" id="tab-advocate" role="tab" aria-selected="false" aria-controls="role-panel" data-role="advocate">
-          <span class="role-number">ROLE_03</span><span class="role-symbol">⌂</span><span class="role-name">Campus Advocate</span>
-        </button>
-        <button class="role-tab" id="tab-mentor" role="tab" aria-selected="false" aria-controls="role-panel" data-role="mentor">
-          <span class="role-number">ROLE_04</span><span class="role-symbol">✳</span><span class="role-name">Mentor</span>
-        </button>
-      </div>
-      <div class="role-detail" id="role-panel" role="tabpanel" aria-labelledby="tab-contributor">
-        <div class="role-intro">
-          <div class="role-big-icon" id="role-icon" aria-hidden="true">⌘</div>
-          <p class="role-path" id="role-path">ROLE_01 / ACTIVE PATH</p>
-          <h2 id="role-title">Contributor</h2>
-          <p class="role-description" id="role-description">Choose a track, explore an unfamiliar codebase, solve open issues, and turn pull requests into proof of work.</p>
-          <a class="role-join" id="role-join" href="#register">Join as contributor <span aria-hidden="true">↗</span></a>
+    <section class="roles" id="roles" aria-labelledby="roles-title">
+      <div class="roles-inner">
+        <div class="roles-heading">
+          <div>
+            <p class="roles-kicker">02 / Find your place</p>
+            <h2 id="roles-title">There’s more than one way to <span>build.</span></h2>
+          </div>
+          <p class="roles-intro">Whether you want to write code, lead a project, grow a community, or share what you know, there’s a place for you here.</p>
         </div>
-        <div class="role-mission">
-          <p class="mission-label">MISSION PARAMETERS</p>
-          <ul class="mission-list" id="mission-list">
-            <li>Pick a track that matches your interests and stack</li>
-            <li>Explore curated issues from real projects</li>
-            <li>Submit contributions, get feedback, and build in public</li>
-            <li>Grow your portfolio through work that ships</li>
-          </ul>
+        <div class="role-grid">
+          <a class="role-card" href="#register">
+            <div class="role-card-top"><span class="role-card-number">ROLE_01</span><span class="role-card-icon" aria-hidden="true">&lt;/&gt;</span></div>
+            <h3>Contributor</h3>
+            <p>Get hands-on with real projects. Explore unfamiliar codebases, solve issues, and turn your learning into work you can show.</p>
+            <span class="role-card-link">Start contributing <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="role-card" href="#register">
+            <div class="role-card-top"><span class="role-card-number">ROLE_02</span><span class="role-card-icon" aria-hidden="true">✳</span></div>
+            <h3>Project Admin</h3>
+            <p>Bring ideas to life. Own a project, shape its roadmap, guide contributors, and help a team ship something meaningful.</p>
+            <span class="role-card-link">Lead a project <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="role-card" href="#register">
+            <div class="role-card-top"><span class="role-card-number">ROLE_03</span><span class="role-card-icon" aria-hidden="true">⌖</span></div>
+            <h3>Campus Advocate</h3>
+            <p>Take the community to your campus. Connect curious students, spread opportunities, and make more people part of the build.</p>
+            <span class="role-card-link">Rep your campus <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="role-card" href="#register">
+            <div class="role-card-top"><span class="role-card-number">ROLE_04</span><span class="role-card-icon" aria-hidden="true">✧</span></div>
+            <h3>Mentor</h3>
+            <p>Pass on what you’ve learned. Help contributors get unstuck, share practical feedback, and make the learning curve less steep.</p>
+            <span class="role-card-link">Become a mentor <span aria-hidden="true">↗</span></span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <script>
-    const roleContent = {
-      contributor: {
-        number: "ROLE_01", name: "Contributor", icon: "⌘",
-        description: "Choose a track, explore an unfamiliar codebase, solve open issues, and turn pull requests into proof of work.",
-        action: "Join as contributor",
-        tasks: ["Pick a track that matches your interests and stack", "Explore curated issues from real projects", "Submit contributions, get feedback, and build in public", "Grow your portfolio through work that ships"]
-      },
-      admin: {
-        number: "ROLE_02", name: "Project Admin", icon: "◉",
-        description: "Take ownership of a project, bring contributors together, and turn a promising idea into something people can use.",
-        action: "Join as project admin",
-        tasks: ["Propose or take charge of an open-source project", "Break ideas into issues that contributors can tackle", "Review progress and help unblock the team", "Guide the project from first commit to release"]
-      },
-      advocate: {
-        number: "ROLE_03", name: "Campus Advocate", icon: "⌂",
-        description: "Build the Code Society presence on your campus and help more students discover meaningful ways to get involved.",
-        action: "Join as campus advocate",
-        tasks: ["Introduce the initiative to your campus community", "Bring curious builders and collaborators together", "Share project openings, events, and opportunities", "Grow a local network of students who build"]
-      },
-      mentor: {
-        number: "ROLE_04", name: "Mentor", icon: "✳",
-        description: "Share what you know, help contributors navigate unfamiliar challenges, and make the open-source journey less intimidating.",
-        action: "Join as mentor",
-        tasks: ["Guide contributors through technical roadblocks", "Share feedback on code, workflow, and collaboration", "Help project teams make sound technical decisions", "Make practical experience more accessible to beginners"]
-      }
-    };
-    document.querySelectorAll(".role-tab").forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const key = tab.dataset.role;
-        const role = roleContent[key];
-        document.querySelectorAll(".role-tab").forEach((item) => item.setAttribute("aria-selected", String(item === tab)));
-        document.getElementById("role-panel").setAttribute("aria-labelledby", tab.id);
-        document.getElementById("role-icon").textContent = role.icon;
-        document.getElementById("role-path").textContent = role.number + " / ACTIVE PATH";
-        document.getElementById("role-title").textContent = role.name;
-        document.getElementById("role-description").textContent = role.description;
-        document.getElementById("role-join").innerHTML = role.action + ' <span aria-hidden="true">↗</span>';
-        document.getElementById("mission-list").innerHTML = role.tasks.map((task) => "<li>" + task + "</li>").join("");
-      });
-    });
-  </script>
+
 
 </body>
 </html>
