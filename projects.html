@@ -7,64 +7,26 @@
   <title>Projects | The Code Society</title>
   <style>
     * { box-sizing: border-box; }
-    html, body { min-height: 100%; margin: 0; background: #000; }
-    body { min-height: 100vh; display: flex; flex-direction: column; color: #fff; font-family: Arial, Helvetica, sans-serif; }
-    header { min-height: 88px; padding: 0 clamp(24px, 6vw, 88px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.12); }
-    a { color: inherit; text-decoration: none; }
-    .brand { font-size: 17px; font-weight: 700; letter-spacing: -.04em; }
-    .back { color: rgba(255,255,255,.7); font-size: 13px; transition: color .2s; }
-    .back:hover { color: #ed2929; }
-    main { flex: 1; display: grid; place-items: center; padding: 64px 24px; text-align: center; }
-    .content { max-width: 760px; }
-    .kicker { margin: 0 0 26px; color: #ed2929; font: 11px/1.5 monospace; letter-spacing: .22em; text-transform: uppercase; }
-    h1 { margin: 0; font-size: clamp(52px, 10vw, 112px); line-height: .92; letter-spacing: -.08em; font-weight: 800; }
-    h1 span { color: #ed2929; }
-    .description { max-width: 480px; margin: 28px auto 0; color: rgba(255,255,255,.58); font-size: 16px; line-height: 1.8; }
-    .status { display: inline-flex; align-items: center; gap: 10px; margin-top: 42px; padding: 13px 17px; border: 1px solid rgba(237,41,41,.45); color: #fff; font: 11px/1.4 monospace; letter-spacing: .12em; text-transform: uppercase; }
-    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #ed2929; box-shadow: 0 0 12px #ed2929; }
-    footer { padding: 22px 24px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.38); text-align: center; font: 10px/1.5 monospace; letter-spacing: .05em; }
-    @media (max-width: 520px) { header { min-height: 76px; } .description { font-size: 14px; } }
-
-    .page-loader {
-      position: fixed; inset: 0; z-index: 9999;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 16px; background: #000;
-      opacity: 1; visibility: visible;
-      transition: opacity .35s ease, visibility .35s ease;
+    html, body { width: 100%; min-height: 100%; margin: 0; background: #000; }
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #000;
+      color: #ed2929;
+      font-family: Arial, Helvetica, sans-serif;
     }
-    .page-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-    .loader-track { width: 150px; height: 1px; overflow: hidden; background: rgba(255,255,255,.18); }
-    .loader-line { display: block; width: 42%; height: 100%; background: #ed2929; box-shadow: 0 0 10px rgba(237,41,41,.7); animation: loader-sweep 1s cubic-bezier(.65,0,.35,1) infinite; }
-    .loader-label { margin: 0; color: rgba(255,255,255,.48); font: 9px/1 monospace; letter-spacing: .28em; }
-    @keyframes loader-sweep { from { transform: translateX(-110%); } to { transform: translateX(360%); } }
-    @media (prefers-reduced-motion: reduce) { .loader-line { animation-duration: 2.5s; } }
+    h1 {
+      margin: 0;
+      color: #ed2929;
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
   </style>
 </head>
 <body>
-  <div class="page-loader" id="page-loader" aria-label="Loading page">
-    <div class="loader-track"><span class="loader-line"></span></div>
-    <p class="loader-label">LOADING</p>
-  </div>
-
-  <header>
-    <a class="brand" href="index.html">The Code Society</a>
-    <a class="back" href="index.html">← Back to home</a>
-  </header>
-  <main>
-    <div class="content">
-      <p class="kicker">THE CODE SOCIETY / PROJECT DIRECTORY</p>
-      <h1>PROJECTS<span>.</span></h1>
-      <p class="description">A space for ideas to become real, and for contributors to build together. We’re getting the project directory ready.</p>
-      <div class="status">COMING SOON</div>
-    </div>
-  </main>
-  <footer>© 2026 The Code Society. Built by the community.</footer>
-<script>
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('page-loader');
-      setTimeout(() => loader?.classList.add('is-hidden'), 450);
-      setTimeout(() => loader?.remove(), 900);
-    });
-  </script>
+  <h1>Coming Soon</h1>
 </body>
 </html>
