@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#000">
+<meta name="description" content="Explore sponsorship opportunities with The Code Society.">
+<title>Sponsor The Code Society</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif}.site-header{min-height:88px;padding:0 clamp(24px,6vw,88px);display:flex;align-items:center;justify-content:space-between;gap:32px;border-bottom:1px solid rgba(255,255,255,.12)}.brand{color:#fff;text-decoration:none;font-size:17px;font-weight:700;letter-spacing:-.04em}.navigation{display:flex;align-items:center;gap:clamp(20px,3.2vw,48px)}.navigation a{color:rgba(255,255,255,.82);text-decoration:none;font-size:13px}.navigation a:hover{color:#ed2929}.navigation .register{padding:13px 20px;background:#ed2929;color:#fff;font-weight:700}.page{width:min(100% - 48px,850px);margin:0 auto;padding:86px 0 110px}.eyebrow{margin:0 0 20px;color:#ed2929;font:11px monospace;letter-spacing:.2em;text-transform:uppercase}.page h1{max-width:760px;margin:0;font-size:clamp(44px,8vw,88px);line-height:.94;letter-spacing:-.075em}.page h1 span{color:#ed2929}.intro{max-width:620px;margin:25px 0 54px;color:rgba(255,255,255,.58);font-size:16px;line-height:1.8}.form-shell{padding:clamp(24px,5vw,48px);background:#080808;border:1px solid rgba(255,255,255,.14)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px 20px}.field{display:flex;flex-direction:column;gap:10px}.field.full{grid-column:1/-1}label,.field-label{color:rgba(255,255,255,.86);font-size:13px;font-weight:700}.required{color:#ed2929}.field input,.field select,.field textarea{width:100%;min-height:50px;padding:14px 15px;background:#000;border:1px solid rgba(255,255,255,.2);border-radius:0;color:#fff;font:14px Arial,sans-serif;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#ed2929}.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.32)}.field select{color-scheme:dark}.field textarea{min-height:130px;resize:vertical;line-height:1.6}.hint{margin:-2px 0 0;color:rgba(255,255,255,.38);font-size:11px;line-height:1.5}.submit-row{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:34px}.submit{min-height:52px;padding:0 25px;border:0;background:#ed2929;color:#fff;font-weight:700;font-size:13px;cursor:pointer;transition:background .2s,transform .2s}.submit:hover{background:#c91f1f;transform:translateY(-2px)}.submit:disabled{opacity:.55;cursor:wait;transform:none}.status{margin:22px 0 0;font-size:13px;line-height:1.6}.status.error{color:#ff7777}.status.success{color:#9bd6a6}.closing-note{max-width:440px;color:rgba(255,255,255,.42);font-size:12px;line-height:1.7;text-align:right}.contact{color:#fff;text-decoration:underline;text-decoration-color:#ed2929;text-underline-offset:3px}.site-footer{padding:30px clamp(24px,6vw,88px);border-top:1px solid rgba(255,255,255,.13);display:flex;justify-content:space-between;gap:20px;color:rgba(255,255,255,.4);font:10px monospace;letter-spacing:.04em}.site-footer a{color:rgba(255,255,255,.6);text-decoration:none}.site-footer a:hover{color:#ed2929}.honeypot{position:absolute;left:-5000px}@media(max-width:650px){.site-header{padding:18px 20px;align-items:flex-start;flex-direction:column;gap:18px}.navigation{width:100%;flex-wrap:wrap;gap:18px}.navigation a{font-size:12px}.navigation .register{margin-left:auto;padding:11px 14px}.page{padding-top:62px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.submit-row{align-items:flex-start;flex-direction:column}.closing-note{text-align:left}.site-footer{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="site-header"><a class="brand" href="/" aria-label="The Code Society home">The Code Society</a><nav class="navigation" aria-label="Main navigation"><a href="/#about">About</a><a href="/projects.html">Projects</a><a class="register" href="/#roles">Register Now</a></nav></header>
+<main class="page">
+<p class="eyebrow">THE CODE SOCIETY / PARTNERSHIPS</p>
+<h1>Thank you for your <span>interest in sponsoring us.</span></h1>
+<p class="intro">We’re glad you’re considering supporting The Code Society. Tell us a little about yourself and how you’d like to contribute. Our team will review your response and get in touch soon.</p>
+<section class="form-shell" aria-label="Sponsorship enquiry">
+<form id="sponsor-form">
+<div class="honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+<div class="form-grid">
+<div class="field full"><label for="name">1. What’s your name? <span class="required">*</span></label><input id="name" name="name" autocomplete="name" required maxlength="120" placeholder="Your name"></div>
+<div class="field full"><label for="sponsorType">2. Are you planning an individual sponsorship or a company sponsorship? <span class="required">*</span></label><select id="sponsorType" name="sponsorType" required><option value="" disabled selected>Select one</option><option>Individual sponsorship</option><option>Company sponsorship</option></select></div>
+<div class="field full"><label for="sponsorshipType">3. How are you planning to sponsor us? <span class="required">*</span></label><select id="sponsorshipType" name="sponsorshipType" required><option value="" disabled selected>Choose a sponsorship format</option><option>Financial contribution / cash sponsorship</option><option>Provide company services or products free to winners</option><option>Something else</option></select></div>
+<div class="field full" id="other-wrap" hidden><label for="otherDetails">Tell us what you have in mind <span class="required">*</span></label><textarea id="otherDetails" name="otherDetails" maxlength="3000" placeholder="Describe your sponsorship idea..."></textarea></div>
+<div class="field full"><label for="extra">Anything else you’d like us to know? <span style="color:rgba(255,255,255,.4)">(optional)</span></label><textarea id="extra" name="extra" maxlength="3000" placeholder="Share any details, questions, or ideas..."></textarea></div>
+</div>
+<div class="submit-row"><button class="submit" id="submit-button" type="submit">SEND SPONSORSHIP ENQUIRY ↗</button><p class="closing-note">Our team will contact you soon. Need to reach us directly? <a class="contact" href="mailto:anjanibeesu@gmail.com">anjanibeesu@gmail.com</a></p></div>
+<p class="status" id="form-status" role="status" aria-live="polite"></p>
+</form>
+</section>
+</main>
+<footer class="site-footer"><span>© 2026 The Code Society. Built by the community.</span><a href="/">BACK TO HOME ↑</a></footer>
+<script>
+const form=document.getElementById('sponsor-form');
+const button=document.getElementById('submit-button');
+const status=document.getElementById('form-status');
+const sponsorshipType=document.getElementById('sponsorshipType');
+const otherWrap=document.getElementById('other-wrap');
+const otherDetails=document.getElementById('otherDetails');
+sponsorshipType.addEventListener('change',()=>{
+  const show=sponsorshipType.value==='Something else';
+  otherWrap.hidden=!show;
+  otherDetails.required=show;
+});
+form.addEventListener('submit',async event=>{
+  event.preventDefault();
+  if(form.website.value) return;
+  button.disabled=true;
+  button.textContent='SENDING ENQUIRY…';
+  status.textContent='';
+  status.className='status';
+  const payload=Object.fromEntries(new FormData(form).entries());
+  try{
+    const response=await fetch('/api/sponsor-enquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok) throw new Error(result.error||'We could not send your enquiry. Please try again.');
+    form.reset();
+    otherWrap.hidden=true;
+    otherDetails.required=false;
+    status.textContent='Thank you for your interest in sponsoring The Code Society. Our team will contact you soon. You can also reach us at anjanibeesu@gmail.com.';
+    status.className='status success';
+    button.textContent='ENQUIRY SENT ✓';
+  }catch(error){
+    status.textContent=error.message||'Something went wrong. Please try again or email anjanibeesu@gmail.com.';
+    status.className='status error';
+    button.disabled=false;
+    button.textContent='SEND SPONSORSHIP ENQUIRY ↗';
+  }
+});
+</script>
+</body>
+</html>
