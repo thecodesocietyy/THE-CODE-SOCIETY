@@ -715,6 +715,27 @@
       .footer-main { grid-template-columns: 1fr; gap: 38px; }
       .footer-brand-block { grid-column: auto; }
     }
+
+    .coming-soon-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 28px;
+      z-index: 1000;
+      padding: 14px 22px;
+      background: #ed2929;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 12px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .coming-soon-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
   </style>
 </head>
 <body>
@@ -722,7 +743,7 @@
     <a class="brand" href="/" aria-label="The Code Society home">The Code Society</a>
     <nav class="navigation" aria-label="Main navigation">
       <a href="#about">About</a>
-      <a href="#roles">Projects</a>
+      <a href="#projects" id="projects-nav">Projects</a>
       <a class="register" href="#get-involved">Register Now</a>
     </nav>
   </header>
@@ -899,5 +920,20 @@
 
 
 
-</body>
+
+  <div class="coming-soon-toast" id="coming-soon-toast" role="status" aria-live="polite">Projects are coming soon.</div>
+  <script>
+    (() => {
+      const projectsLink = document.getElementById('projects-nav');
+      const toast = document.getElementById('coming-soon-toast');
+      let toastTimer;
+      projectsLink?.addEventListener('click', (event) => {
+        event.preventDefault();
+        toast.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2400);
+      });
+    })();
+  </script>
+\n</body>
 </html>
