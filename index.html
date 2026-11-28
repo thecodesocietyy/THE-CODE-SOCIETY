@@ -281,58 +281,71 @@
       white-space: nowrap;
     }
     .timeline-scroll {
-      display: grid;
-      grid-auto-columns: minmax(245px, 1fr);
-      grid-auto-flow: column;
-      gap: 14px;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
-      padding: 8px 2px 22px;
-      scrollbar-width: thin;
-      scrollbar-color: #ed2929 #171717;
-    }
-    .timeline-scroll::-webkit-scrollbar { height: 5px; }
-    .timeline-scroll::-webkit-scrollbar-track { background: #171717; }
-    .timeline-scroll::-webkit-scrollbar-thumb { background: #ed2929; border-radius: 8px; }
-    .timeline-step {
-      min-height: 250px;
       position: relative;
       display: flex;
       flex-direction: column;
-      padding: 25px 24px 24px;
-      background: linear-gradient(145deg, #0d0d0d, #050505);
-      border: 1px solid rgba(255,255,255,.13);
-      scroll-snap-align: start;
+      gap: 28px;
+      overflow: visible;
+      padding: 12px 0 20px;
     }
+    .timeline-scroll::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 34px;
+      transform: translateX(-50%);
+      opacity: .9;
+      background-repeat: repeat-y;
+      background-size: 34px 180px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='180' viewBox='0 0 34 180'%3E%3Cpath d='M17 0 C-4 35 38 55 17 90 C-4 125 38 145 17 180' fill='none' stroke='%23ed2929' stroke-width='1.5' stroke-opacity='.75' stroke-dasharray='4 6'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .timeline-step {
+      width: calc(50% - 54px);
+      min-height: 205px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 26px;
+      background: linear-gradient(145deg, #101010, #060606);
+      border: 1px solid rgba(255,255,255,.14);
+      scroll-snap-align: none;
+    }
+    .timeline-step:nth-child(odd) { align-self: flex-start; }
+    .timeline-step:nth-child(even) { align-self: flex-end; }
     .timeline-step::before {
       content: "";
       position: absolute;
-      top: -9px;
-      left: 24px;
-      width: 15px;
-      height: 15px;
+      top: 30px;
+      right: -66px;
+      width: 11px;
+      height: 11px;
+      border: 2px solid #000;
       border-radius: 50%;
       background: #ed2929;
-      box-shadow: 0 0 18px rgba(237,41,41,.28);
+      box-shadow: 0 0 0 4px rgba(237,41,41,.15), 0 0 18px rgba(237,41,41,.35);
+      z-index: 1;
     }
+    .timeline-step:nth-child(even)::before { left: -66px; right: auto; }
     .timeline-index {
       color: rgba(255,255,255,.4);
       font: 11px/1.4 monospace;
       letter-spacing: .16em;
     }
     .timeline-date {
-      margin: 34px 0 12px;
+      margin: 24px 0 10px;
       color: #ed2929;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: .04em;
+      letter-spacing: .06em;
       text-transform: uppercase;
     }
     .timeline-step h3 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: #fff;
-      font-size: 23px;
+      font-size: 22px;
       letter-spacing: -.045em;
     }
     .timeline-step p {
@@ -342,10 +355,32 @@
       line-height: 1.7;
     }
     .timeline-footnote {
-      margin: 18px 0 0;
+      margin: 20px 0 0;
       color: rgba(255,255,255,.38);
       font-size: 12px;
       line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .timeline-heading { display: block; margin-bottom: 28px; }
+      .timeline-hint { margin-top: 18px; }
+      .timeline-scroll { gap: 18px; padding: 8px 0 12px 26px; }
+      .timeline-scroll::before {
+        left: 7px;
+        transform: none;
+        width: 22px;
+        background-size: 22px 150px;
+      }
+      .timeline-step {
+        width: 100%;
+        min-height: 0;
+        padding: 22px 20px;
+      }
+      .timeline-step:nth-child(n) { align-self: stretch; }
+      .timeline-step:nth-child(n)::before {
+        left: -25px;
+        right: auto;
+        top: 28px;
+      }
     }
     @media (max-width: 600px) {
       .timeline-heading { display: block; margin-bottom: 28px; }
