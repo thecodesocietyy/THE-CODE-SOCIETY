@@ -7,6 +7,7 @@
   <title>The Code Society</title>
   <style>
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     html, body { width: 100%; min-height: 100%; margin: 0; background: #000; }
     body {
       min-height: 100vh;
@@ -44,17 +45,17 @@
       font-weight: 500;
       transition: color .2s ease;
     }
-    .navigation a:hover { color: #F4E6A1; }
+    .navigation a:hover { color: #ed2929; }
     .navigation .register {
       padding: 13px 20px;
-      background: #F4E6A1;
-      color: #111;
+      background: #ed2929;
+      color: #fff;
       font-weight: 700;
       transition: background .2s ease, transform .2s ease;
     }
     .navigation .register:hover {
-      background: #E6D27F;
-      color: #111;
+      background: #c91f1f;
+      color: #fff;
       transform: translateY(-2px);
     }
     .hero {
@@ -66,12 +67,50 @@
     }
     .hero h1 {
       margin: 0;
-      color: #F4E6A1;
+      color: #ed2929;
       font-size: clamp(42px, 9vw, 112px);
       line-height: .95;
       letter-spacing: -.075em;
       font-weight: 800;
       text-transform: uppercase;
+    }
+    .about {
+      padding: clamp(88px, 12vw, 160px) clamp(24px, 12vw, 176px);
+      border-top: 1px solid rgba(255,255,255,.12);
+      scroll-margin-top: 30px;
+    }
+    .about-kicker {
+      margin: 0 0 28px;
+      color: #ed2929;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .about h2 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(38px, 6.5vw, 78px);
+      line-height: .98;
+      letter-spacing: -.065em;
+      font-weight: 800;
+    }
+    .about h2 span { color: #ed2929; }
+    .about-copy {
+      max-width: 680px;
+      margin: 38px 0 0 auto;
+      color: rgba(255,255,255,.7);
+      font-size: clamp(16px, 1.6vw, 19px);
+      line-height: 1.8;
+    }
+    .about-copy p { margin: 0 0 18px; }
+    .about-note {
+      display: inline-block;
+      margin-top: 14px;
+      padding-left: 16px;
+      border-left: 2px solid #ed2929;
+      color: #fff;
+      font-weight: 600;
     }
     @media (max-width: 600px) {
       .site-header {
@@ -89,6 +128,7 @@
       .navigation a { font-size: 12px; }
       .navigation .register { margin-left: auto; padding: 11px 14px; }
       .hero { min-height: calc(100vh - 130px); }
+      .about-copy { margin-left: 0; }
     }
   </style>
 </head>
@@ -101,8 +141,20 @@
       <a class="register" href="#register">Register Now</a>
     </nav>
   </header>
-  <main class="hero">
-    <h1>The Code Society</h1>
+  <main>
+    <section class="hero" aria-label="The Code Society">
+      <h1>The Code Society</h1>
+    </section>
+    <section class="about" id="about">
+      <p class="about-kicker">01 / About us</p>
+      <h2>We’re here to break the <span>experience paradox.</span></h2>
+      <div class="about-copy">
+        <p>Companies expect freshers to have 1–2 years of experience. But how are you supposed to get experience when every opportunity asks you to have it already?</p>
+        <p>That’s exactly why The Code Society exists. We give students a space to learn by building, contribute to real open-source projects, and work alongside people who are figuring things out together.</p>
+        <p>You’ll learn to navigate unfamiliar codebases, collaborate with a team, solve problems you haven’t seen before, and actually ship things. Not just collect certificates. Not just watch tutorials. Do the work.</p>
+        <span class="about-note">Show up curious. Leave with something built.</span>
+      </div>
+    </section>
   </main>
 </body>
 </html>
