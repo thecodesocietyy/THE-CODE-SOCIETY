@@ -12,12 +12,97 @@
       min-height: 100vh;
       background: #000;
       color: #fff;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
-    main { min-height: 100vh; background: #000; }
+    .site-header {
+      width: 100%;
+      min-height: 88px;
+      padding: 0 clamp(24px, 6vw, 88px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .brand {
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.04em;
+      white-space: nowrap;
+    }
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3.2vw, 48px);
+    }
+    .navigation a {
+      color: rgba(255,255,255,.82);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color .2s ease;
+    }
+    .navigation a:hover { color: #ed1c24; }
+    .navigation .register {
+      padding: 13px 20px;
+      background: #ed1c24;
+      color: #fff;
+      font-weight: 700;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .navigation .register:hover {
+      background: #c9151c;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .hero {
+      min-height: calc(100vh - 89px);
+      display: grid;
+      place-items: center;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .hero h1 {
+      margin: 0;
+      color: #ed1c24;
+      font-size: clamp(42px, 9vw, 112px);
+      line-height: .95;
+      letter-spacing: -.075em;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    @media (max-width: 600px) {
+      .site-header {
+        min-height: 76px;
+        padding: 18px 20px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .navigation {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .navigation a { font-size: 12px; }
+      .navigation .register { margin-left: auto; padding: 11px 14px; }
+      .hero { min-height: calc(100vh - 130px); }
+    }
   </style>
 </head>
 <body>
-  <main aria-label="The Code Society"></main>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="The Code Society home">The Code Society</a>
+    <nav class="navigation" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a class="register" href="#register">Register Now</a>
+    </nav>
+  </header>
+  <main class="hero">
+    <h1>The Code Society</h1>
+  </main>
 </body>
 </html>
