@@ -244,6 +244,116 @@
       .role-card-top { margin-bottom: 30px; }
     }
 
+
+    .timeline-section {
+      padding: clamp(76px, 9vw, 120px) clamp(24px, 6vw, 88px);
+      border-top: 1px solid rgba(255,255,255,.12);
+      overflow: hidden;
+      scroll-margin-top: 30px;
+    }
+    .timeline-inner { width: min(100%, 1440px); margin: 0 auto; }
+    .timeline-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 42px;
+    }
+    .timeline-kicker {
+      margin: 0 0 18px;
+      color: #ed2929;
+      font: 11px/1.4 monospace;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .timeline-heading h2 {
+      margin: 0;
+      font-size: clamp(38px, 5.6vw, 70px);
+      line-height: .98;
+      letter-spacing: -.07em;
+    }
+    .timeline-heading h2 span { color: #ed2929; }
+    .timeline-hint {
+      margin: 0 0 4px;
+      color: rgba(255,255,255,.48);
+      font: 11px/1.5 monospace;
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+    .timeline-scroll {
+      display: grid;
+      grid-auto-columns: minmax(245px, 1fr);
+      grid-auto-flow: column;
+      gap: 14px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      padding: 8px 2px 22px;
+      scrollbar-width: thin;
+      scrollbar-color: #ed2929 #171717;
+    }
+    .timeline-scroll::-webkit-scrollbar { height: 5px; }
+    .timeline-scroll::-webkit-scrollbar-track { background: #171717; }
+    .timeline-scroll::-webkit-scrollbar-thumb { background: #ed2929; border-radius: 8px; }
+    .timeline-step {
+      min-height: 250px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 25px 24px 24px;
+      background: linear-gradient(145deg, #0d0d0d, #050505);
+      border: 1px solid rgba(255,255,255,.13);
+      scroll-snap-align: start;
+    }
+    .timeline-step::before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 24px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #ed2929;
+      box-shadow: 0 0 18px rgba(237,41,41,.28);
+    }
+    .timeline-index {
+      color: rgba(255,255,255,.4);
+      font: 11px/1.4 monospace;
+      letter-spacing: .16em;
+    }
+    .timeline-date {
+      margin: 34px 0 12px;
+      color: #ed2929;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .timeline-step h3 {
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 23px;
+      letter-spacing: -.045em;
+    }
+    .timeline-step p {
+      margin: 0;
+      color: rgba(255,255,255,.58);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .timeline-footnote {
+      margin: 18px 0 0;
+      color: rgba(255,255,255,.38);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .timeline-heading { display: block; margin-bottom: 28px; }
+      .timeline-hint { margin-top: 18px; }
+      .timeline-scroll { grid-auto-columns: minmax(78vw, 78vw); }
+      .timeline-step { min-height: 225px; }
+    }
+
     @media (max-width: 600px) {
       .site-header {
         min-height: 76px;
@@ -323,6 +433,57 @@
             <span class="role-card-link">Become a mentor <span aria-hidden="true">↗</span></span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <section class="timeline-section" id="timeline" aria-labelledby="timeline-title">
+      <div class="timeline-inner">
+        <div class="timeline-heading">
+          <div>
+            <p class="timeline-kicker">03 / The roadmap</p>
+            <h2 id="timeline-title">From first signup to <span>shipped work.</span></h2>
+          </div>
+          <p class="timeline-hint">SCROLL TO EXPLORE &nbsp; →</p>
+        </div>
+        <div class="timeline-scroll" tabindex="0" aria-label="Scrollable program timeline">
+          <article class="timeline-step">
+            <span class="timeline-index">PHASE_01</span>
+            <p class="timeline-date">December · 2nd week</p>
+            <h3>Registrations open</h3>
+            <p>Applications open for contributors, project admins, campus advocates, and mentors.</p>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-index">PHASE_02</span>
+            <p class="timeline-date">December · Late</p>
+            <h3>Program begins</h3>
+            <p>The community gets moving. Teams connect, projects take shape, and contributions begin.</p>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-index">PHASE_03</span>
+            <p class="timeline-date">January</p>
+            <h3>Build & contribute</h3>
+            <p>Keep learning, collaborating, solving issues, and making meaningful progress on projects.</p>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-index">PHASE_04</span>
+            <p class="timeline-date">February</p>
+            <h3>Program concludes</h3>
+            <p>The program wraps up as contributions and project outcomes are reviewed.</p>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-index">PHASE_05</span>
+            <p class="timeline-date">Around 1 week later</p>
+            <h3>Winners announced</h3>
+            <p>Final results are revealed after the program concludes.</p>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-index">PHASE_06</span>
+            <p class="timeline-date">After results</p>
+            <h3>Certificates sent</h3>
+            <p>Certificates are shared with eligible participants.</p>
+          </article>
+        </div>
+        <p class="timeline-footnote">This is an expected timeline. Dates may shift as the program schedule is finalized.</p>
       </div>
     </section>
   </main>
