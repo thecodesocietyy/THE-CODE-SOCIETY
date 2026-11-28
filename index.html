@@ -96,14 +96,82 @@
       font-weight: 800;
     }
     .about h2 span { color: #ed2929; }
+    .about-content {
+      display: grid;
+      grid-template-columns: minmax(240px, .78fr) minmax(0, 1.22fr);
+      align-items: stretch;
+      gap: clamp(28px, 5vw, 76px);
+      margin-top: 48px;
+    }
+    .about-quote-card {
+      position: relative;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(26px, 3.5vw, 44px);
+      overflow: hidden;
+      background: linear-gradient(145deg, #151010, #080808 72%);
+      border: 1px solid rgba(237,41,41,.38);
+    }
+    .about-quote-card::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -105px;
+      bottom: -115px;
+      border: 1px solid rgba(237,41,41,.22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 24px rgba(237,41,41,.025), 0 0 0 48px rgba(237,41,41,.02);
+      pointer-events: none;
+    }
+    .about-quote-mark {
+      color: #ed2929;
+      font: 900 76px/.7 Georgia, serif;
+    }
+    .about-quote {
+      position: relative;
+      z-index: 1;
+      max-width: 390px;
+      margin: 30px 0;
+      color: #fff;
+      font-size: clamp(25px, 2.8vw, 36px);
+      line-height: 1.12;
+      letter-spacing: -.055em;
+      font-weight: 750;
+    }
+    .about-quote em { color: #ed2929; font-style: normal; }
+    .about-quote-credit {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,.48);
+      font: 10px/1.5 monospace;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .about-quote-credit::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: #ed2929;
+    }
     .about-copy {
       max-width: 680px;
-      margin: 38px 0 0 auto;
+      margin: 0;
+      align-self: center;
       color: rgba(255,255,255,.7);
       font-size: clamp(16px, 1.6vw, 19px);
       line-height: 1.8;
     }
     .about-copy p { margin: 0 0 18px; }
+    @media (max-width: 760px) {
+      .about-content { grid-template-columns: 1fr; gap: 28px; margin-top: 34px; }
+      .about-quote-card { min-height: 260px; }
+    }
     .about-note {
       display: inline-block;
       margin-top: 14px;
@@ -665,11 +733,18 @@
     <section class="about" id="about">
       <p class="about-kicker">01 / About us</p>
       <h2>We’re here to break the <span>experience paradox.</span></h2>
-      <div class="about-copy">
-        <p>Companies want freshers with 1–2 years of experience. But how are you supposed to gain experience when every opportunity already expects you to have it? Make it make sense.</p>
-        <p>That’s why The Code Society is here. We’re building a space where students can get hands-on experience by contributing to open-source projects, collaborating with other builders, and learning by doing.</p>
-        <p>You’ll navigate unfamiliar codebases, figure out tools you’ve never used, collaborate with a team, solve real problems, and ship actual work. You don’t need to know everything before you start. You just need to be willing to explore, learn, and do the work.</p>
-        <span class="about-note">Show up curious. Leave with something built.</span>
+      <div class="about-content">
+        <aside class="about-quote-card" aria-label="The Code Society quote">
+          <span class="about-quote-mark" aria-hidden="true">“</span>
+          <p class="about-quote">You can’t get experience without experience. <em>So we built a place to start.</em></p>
+          <span class="about-quote-credit">The Code Society / Our why</span>
+        </aside>
+        <div class="about-copy">
+          <p>Companies want freshers with 1–2 years of experience. But how are you supposed to gain experience when every opportunity already expects you to have it? Make it make sense.</p>
+          <p>That’s why The Code Society is here. We’re building a space where students can get hands-on experience by contributing to open-source projects, collaborating with other builders, and learning by doing.</p>
+          <p>You’ll navigate unfamiliar codebases, figure out tools you’ve never used, collaborate with a team, solve real problems, and ship actual work. You don’t need to know everything before you start. You just need to be willing to explore, learn, and do the work.</p>
+          <span class="about-note">Show up curious. Leave with something built.</span>
+        </div>
       </div>
     </section>
 
