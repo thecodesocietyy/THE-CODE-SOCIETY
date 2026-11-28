@@ -19,14 +19,217 @@
     h1 {
       margin: 0;
       color: #ed2929;
-      font-size: clamp(18px, 3vw, 28px);
-      font-weight: 500;
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 600;
       letter-spacing: .16em;
       text-transform: uppercase;
     }
+    .site-header {
+      width: 100%;
+      min-height: 88px;
+      padding: 0 clamp(24px, 6vw, 88px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .brand {
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.04em;
+      white-space: nowrap;
+    }
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3.2vw, 48px);
+    }
+    .navigation a {
+      color: rgba(255,255,255,.82);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color .2s ease;
+    }
+    .navigation a:hover { color: #ed2929; }
+    .navigation .register {
+      padding: 13px 20px;
+      background: #ed2929;
+      color: #fff;
+      font-weight: 700;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .navigation .register:hover {
+      background: #c91f1f;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .site-footer {
+      padding: 76px clamp(24px, 7vw, 104px) 24px;
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,.14);
+    }
+    .footer-main {
+      width: min(100%, 1320px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(260px, 1.5fr) minmax(150px, .7fr) minmax(170px, .7fr);
+      gap: clamp(40px, 8vw, 120px);
+      padding-bottom: 76px;
+    }
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-mark {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(237,41,41,.65);
+      color: #ed2929;
+      font: 700 18px/1 monospace;
+      letter-spacing: -5px;
+      padding-right: 5px;
+    }
+    .footer-mark i { font-style: normal; color: #fff; }
+    .footer-brand-name {
+      font-size: 17px;
+      line-height: .95;
+      font-weight: 900;
+      letter-spacing: -.055em;
+    }
+    .footer-brand-name span { color: #ed2929; }
+    .footer-motto {
+      margin: 25px 0 24px;
+      color: rgba(255,255,255,.58);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .footer-email {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      color: #fff;
+      font-size: 13px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(237,41,41,.7);
+      padding-bottom: 7px;
+    }
+    .footer-email span { color: #ed2929; }
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .footer-label {
+      margin: 3px 0 10px;
+      color: #ed2929;
+      font: 10px/1.4 monospace;
+      letter-spacing: .2em;
+    }
+    .footer-column a {
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color .2s ease, transform .2s ease;
+    }
+    .footer-column a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+    .footer-socials a {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-socials a span { color: #ed2929; }
+    .footer-bottom {
+      width: min(100%, 1320px);
+      min-height: 58px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.38);
+      font: 10px/1.5 monospace;
+      letter-spacing: .04em;
+    }
+    .footer-bottom a {
+      color: rgba(255,255,255,.58);
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .footer-bottom a:hover { color: #ed2929; }
+    @media (max-width: 720px) {
+      .site-footer { padding-top: 58px; }
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 46px 28px;
+        padding-bottom: 52px;
+      }
+      .footer-brand-block { grid-column: 1 / -1; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; justify-content: center; padding: 18px 0; }
+    }
+    @media (max-width: 420px) {
+      .footer-main { grid-template-columns: 1fr; gap: 38px; }
+      .footer-brand-block { grid-column: auto; }
+    }
+    main { min-height: calc(100vh - 88px - 330px); display: grid; place-items: center; padding: 48px 24px; }
+    @media (max-width: 720px) { main { min-height: calc(100vh - 120px - 520px); } }
   </style>
 </head>
 <body>
-  <h1>Coming Soon</h1>
+  <header class="site-header" id="top">
+    <a class="brand" href="/" aria-label="The Code Society home">The Code Society</a>
+    <nav class="navigation" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="projects.html">Projects</a>
+      <a class="register" href="#roles">Register Now</a>
+    </nav>
+  </header>
+  <main><h1>COMING SOON</h1></main>
+    <footer class="site-footer" id="footer">
+      <div class="footer-main">
+        <div class="footer-brand-block">
+          <a class="footer-brand" href="#" aria-label="The Code Society home">
+            <span class="footer-mark" aria-hidden="true"><span>&lt;</span><i>/</i><span>&gt;</span></span>
+            <span class="footer-brand-name">THE CODE<br>SOCIETY<span>.</span></span>
+          </a>
+          <p class="footer-motto">Turning students into contributors.<br>Turning contributions into experience.</p>
+          <a class="footer-email" href="mailto:thecodesocietyofficial@gmail.com">thecodesocietyofficial@gmail.com <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="footer-column">
+          <p class="footer-label">EXPLORE</p>
+          <a href="#">Home</a>
+          <a href="#about">About us</a>
+          <a href="#roles">Projects & roles</a>
+          <a href="#timeline">Program timeline</a>
+          <a href="#get-involved">Get involved</a>
+        </div>
+        <div class="footer-column footer-socials">
+          <p class="footer-label">FOLLOW THE BUILD</p>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
+          <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">Discord <span>↗</span></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer">X / Twitter <span>↗</span></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="footer-year">2026</span> The Code Society. Built by the community.</span>
+        <a href="#top">BACK TO TOP ↑</a>
+      </div>
+    </footer>
 </body>
 </html>
