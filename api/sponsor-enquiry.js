@@ -15,11 +15,13 @@ export default async function handler(req, res) {
   if (clean(body.website)) return res.status(200).json({ ok: true });
 
   const name = clean(body.name);
+  const email = clean(body.email);
+  const phone = clean(body.phone);
   const sponsorType = clean(body.sponsorType);
   const sponsorshipType = clean(body.sponsorshipType);
   const otherDetails = clean(body.otherDetails);
   const extra = clean(body.extra);
-  if (!name || !['Individual sponsorship', 'Company sponsorship'].includes(sponsorType) ||
+  if (!name || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email) || !['Individual sponsorship', 'Company sponsorship'].includes(sponsorType) ||
       !['Financial contribution / cash sponsorship', 'Provide company services or products free to winners', 'Something else'].includes(sponsorshipType) ||
       (sponsorshipType === 'Something else' && !otherDetails)) {
     return res.status(400).json({ error: 'Please complete the required fields.' });
@@ -27,6 +29,8 @@ export default async function handler(req, res) {
 
   const rows = [
     ['Name', name],
+    ['Contact email', email],
+    ['Phone number', phone || 'Not provided'],
     ['Sponsorship type', sponsorType],
     ['Proposed support', sponsorshipType],
     ['Other details', otherDetails || 'Not applicable'],
@@ -44,6 +48,7 @@ export default async function handler(req, res) {
         from: process.env.RESEND_FROM_EMAIL || 'The Code Society <onboarding@resend.dev>',
         to: [INBOX],
         subject: 'Sponsorship enquiry: ' + name,
+        reply_to: email,
         html
       })
     });
