@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 
 export const config = { api: { bodyParser: false } };
 
-const INBOX = 'thecodesocietyofficial@gmail.com';
+const INBOX = 'thecodesocietyoffical@gmail.com';
 const escapeHtml = (value = '') => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const first = value => Array.isArray(value) ? value[0] : value;
 
