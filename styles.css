@@ -1975,3 +1975,18 @@ textarea {
 }
 @media(max-width:700px){.holo-mosaic-background{opacity:.25}}
 @media(prefers-reduced-motion:reduce){.holo-mosaic-background{opacity:.2}}
+
+
+/* HoloMosaic visibility fix: make the metallic tiles visible over the light sections */
+.holo-mosaic-background{
+  z-index: 20;
+  opacity: .72;
+  mix-blend-mode: multiply;
+  filter: contrast(1.18) saturate(1.2);
+}
+@media(max-width:700px){
+  .holo-mosaic-background{opacity:.58}
+}
+@media(prefers-reduced-motion:reduce){
+  .holo-mosaic-background{opacity:.48}
+}
