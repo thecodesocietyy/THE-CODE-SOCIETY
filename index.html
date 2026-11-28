@@ -716,9 +716,28 @@
       .footer-brand-block { grid-column: auto; }
     }
 
+
+    .page-loader {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 16px; background: #000;
+      opacity: 1; visibility: visible;
+      transition: opacity .35s ease, visibility .35s ease;
+    }
+    .page-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-track { width: 150px; height: 1px; overflow: hidden; background: rgba(255,255,255,.18); }
+    .loader-line { display: block; width: 42%; height: 100%; background: #ed2929; box-shadow: 0 0 10px rgba(237,41,41,.7); animation: loader-sweep 1s cubic-bezier(.65,0,.35,1) infinite; }
+    .loader-label { margin: 0; color: rgba(255,255,255,.48); font: 9px/1 monospace; letter-spacing: .28em; }
+    @keyframes loader-sweep { from { transform: translateX(-110%); } to { transform: translateX(360%); } }
+    @media (prefers-reduced-motion: reduce) { .loader-line { animation-duration: 2.5s; } }
   </style>
 </head>
 <body>
+  <div class="page-loader" id="page-loader" aria-label="Loading page">
+    <div class="loader-track"><span class="loader-line"></span></div>
+    <p class="loader-label">LOADING</p>
+  </div>
+
   <header class="site-header" id="top">
     <a class="brand" href="/" aria-label="The Code Society home">The Code Society</a>
     <nav class="navigation" aria-label="Main navigation">
@@ -901,5 +920,12 @@
 
 
 
-\n</body>
+<script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('page-loader');
+      setTimeout(() => loader?.classList.add('is-hidden'), 450);
+      setTimeout(() => loader?.remove(), 900);
+    });
+  </script>
+</body>
 </html>
