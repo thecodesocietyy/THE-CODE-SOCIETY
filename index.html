@@ -921,11 +921,24 @@
 
 
 <script>
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('page-loader');
-      setTimeout(() => loader?.classList.add('is-hidden'), 450);
-      setTimeout(() => loader?.remove(), 900);
-    });
+    (() => {
+      const hideLoader = () => {
+        const loader = document.getElementById('page-loader');
+        if (!loader || loader.dataset.dismissed) return;
+        loader.dataset.dismissed = 'true';
+        requestAnimationFrame(() => loader.classList.add('is-hidden'));
+        setTimeout(() => loader.remove(), 500);
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', hideLoader, { once: true });
+      } else {
+        hideLoader();
+      }
+
+      // Never let the decorative loader block the page for more than 1.5 seconds.
+      setTimeout(hideLoader, 1500);
+    })();
   </script>
 </body>
 </html>
