@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "build": "node --check server.js brand.js && node -e \"import('node:fs').then(fs=>{fs.mkdirSync('public',{recursive:true});for(const f of ['index.html','projects.html','join.html','careers.html','volunteer.html','thank-you.html','organize.html','styles.css','brand.js','holomosaic.js'])fs.copyFileSync(f,'public/'+f);})\"",
+    "build": "node --check server.js brand.js && node -e \"import('node:fs').then(fs=>{fs.mkdirSync('public',{recursive:true});for(const f of ['index.html','projects.html','join.html','careers.html','volunteer.html','thank-you.html','organize.html','sponsor.html','styles.css','brand.js','holomosaic.js'])fs.copyFileSync(f,'public/'+f);})\"",
     "lint": "node --check server.js brand.js"
   },
   "dependencies": {
