@@ -22,7 +22,6 @@ export default async function handler(req, res) {
     maxFileSize: 8 * 1024 * 1024,
     maxTotalFileSize: 8 * 1024 * 1024,
     allowEmptyFiles: false,
-    filter: ({ name }) => name !== 'resume' || true
   });
 
   let fields, files;
